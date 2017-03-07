@@ -50,11 +50,11 @@ router.get('/submit', function (req, res) {
     var mes = req.session.body.message
     let message = {
         // Comma separated list of recipients
-        to: 'Hoge Fuga <koheiebato@gmail.com>',
+        to: mes.word1,
         // Subject of the message
         subject: 'Nodemailer is unicode friendly ✔ #', //
         // plaintext body
-        text: mes.word1 + '+' + mes.word2
+        text: mes.word1 + '様の予約時間は' + mes.word2 + 'です。'
     };
     transporter.sendMail(message, (error, info) => {
         if (error) {

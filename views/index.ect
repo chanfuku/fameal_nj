@@ -30,8 +30,8 @@
       </div>
     </nav>
     <form method="POST" action="/confirm">
-        <p>テスト1：<input type = "text" name="word1" value="<%- @message.word1 %>"></p>
-        <p>テスト2：<input type = "text" name="word2" value="<%- @message.word2 %>"></p>
+        <p>メールアドレス：<input type = "text" name="word1" value="<%- @message.word1 %>"></p>
+        <p>時間：<input type = "text" name="word2" value="<%- @message.word2 %>"></p>
         <p><input type="submit" value="送信"></p>
     </form>
     <% for e in @errors : %>
