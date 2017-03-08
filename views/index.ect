@@ -81,41 +81,36 @@
 
 <div class="box3">
     <div class="container">
-      <form id="contact" action="" method="post">
+      <% for e in @errors : %>
+      <%- e.msg %>
+      <% end %>
+      <form id="contact" action="/confirm" method="post">
         <h4>担当者から返信させていただきます。</h4>
         <fieldset>
-          <input placeholder="お名前" type="text" tabindex="1" required autofocus>
+          <input placeholder="お名前" name="name" type="text" value="<%- @message.name %>" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-          <input placeholder="住所" type="text" tabindex="2" required>
+          <input placeholder="住所" name="address" type="text" value="<%- @message.address %>" tabindex="2" required>
         </fieldset>
         <fieldset>
-          <input placeholder="電話番号" type="tel" tabindex="3" required>
+          <input placeholder="電話番号" name="tel" type="tel" value="<%- @message.tel %>" tabindex="3" required>
         </fieldset>
         <fieldset>
-          <input placeholder="メールアドレス" type="email" tabindex="4" required>
+          <input placeholder="メールアドレス" name="email" type="email" value="<%- @message.email %>" tabindex="4" required>
         </fieldset>
         <fieldset>
-          <input placeholder="参加人数" type="number" tabindex="5" required>
+          <input placeholder="参加人数" name="attendNum" type="number" value="<%- @message.attendNum %>" tabindex="5" required>
         </fieldset>
         <fieldset>
-          <input placeholder="希望日" type="date" tabindex="6" required>
+          <input placeholder="希望日" name="date" type="date" value="<%- @message.date %>" tabindex="6" required>
         </fieldset>
         <fieldset>
-          <textarea placeholder="備考" type="text" tabindex="7"></textarea>
+          <textarea placeholder="備考" name="note" type="text" value="<%- @message.note %>" tabindex="7"></textarea>
         </fieldset>
         <fieldset>
           <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">確認</button>
         </fieldset>
       </form>
-      <form method="POST" action="/confirm">
-          <p>メールアドレス：<input type = "text" name="word1" value="<%- @message.word1 %>"></p>
-          <p>時間：<input type = "text" name="word2" value="<%- @message.word2 %>"></p>
-          <p><input type="submit" value="送信"></p>
-      </form>
-      <% for e in @errors : %>
-      <%- e.msg %>
-      <% end %>
     </div>
 </div>
 

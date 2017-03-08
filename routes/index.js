@@ -31,8 +31,13 @@ router.post('/confirm', function (req, res) {
     var sess = req.session
     sess.body = {message: req.body}
     // validation
-    req.assert('word1', 'word1を入力してください').notEmpty();
-    req.assert('word2', 'word2は数字で入力してください').isInt();
+    req.assert('name', 'お名前を入力してください').notEmpty();
+    req.assert('address', '住所を入力してください').notEmpty();
+    req.assert('tel', '電話番号を入力してください').notEmpty();
+    req.assert('email', 'メールアドレスを入力してください').notEmpty();
+    req.assert('attendNum', '参加人数を入力してください').isInt();
+    req.assert('date', '希望日時を入力してください').notEmpty();
+    req.assert('note', '希望日時を入力してください').notEmpty();
     var errors = req.validationErrors();
     req.getValidationResult().then(function(result) {
         if (!result.isEmpty()) {
@@ -50,11 +55,11 @@ router.get('/submit', function (req, res) {
     var mes = req.session.body.message
     let message = {
         // Comma separated list of recipients
-        to: mes.word1,
+        to: mes.email,
         // Subject of the message
-        subject: 'Nodemailer is unicode friendly ✔ #', //
+        subject: '[fameal]予約完了', //
         // plaintext body
-        text: mes.word1 + '様の予約時間は' + mes.word2 + 'です。'
+        text: mes.name + '様の予約日時は' + mes.date + 'です。'
     };
     transporter.sendMail(message, (error, info) => {
         if (error) {
