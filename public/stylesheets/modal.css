@@ -1,0 +1,63 @@
+/* ########### 879px以下 ########### */
+@media (max-width: 879px) {
+nav, ul {padding: 0;}
+a {
+    text-decoration: none;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    color: #1111cc;
+}
+
+.modalmenu {
+    position: fixed;
+    display: table;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modalmenu ul {
+    display: table-cell;
+    vertical-align: middle;
+    list-style-type: none;
+}
+
+.modalmenu li {
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.modalmenu li a {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+}
+
+.modalmenu li a:hover {
+    color: #999;
+}
+
+/* 開閉用ボタンがクリックされた時のスタイル */
+.open .modalmenu {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    visibility: visible;
+    opacity: 1;
+}
+}
+
+/* ########### 880px以上 ########### */
+@media (min-width: 880px) {
+
+/* トグルボタン */
+.modalmenu	{display: none}
+}
