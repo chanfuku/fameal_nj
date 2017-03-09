@@ -4,12 +4,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const session = require('express-session');
+const basicAuth = require('basic-auth-connect');
 
 // 環境変数読み込み
 require('dotenv').config();
-
 // express の実態 Application を生成
 var app = express();
+// basic認証
+var username = process.env.BASIC_AUTH_USERNAME;
+var password = process.env.BASIC_AUTH_PASSWORD;
+if (username && password) {
+  app.use(basicAuth(username, password));
+}
+
 // urlencodedとjsonは別々に初期化する
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
