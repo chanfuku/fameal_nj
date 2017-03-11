@@ -64,6 +64,7 @@ body	{margin: 0;
     text-align: left;}
 .box7-inner .text {font-size: 70%;
     text-align: left;}
+.relative {position: relative;}
 
 /* ########### 879px以下 ########### */
 @media (max-width: 879px) {
