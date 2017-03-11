@@ -29,10 +29,10 @@ router.get('/', function (req, res) {
     var sess = req.session
     if (sess.body != null) {
         console.log('session loaded at top')
-        res.render('index', { message: sess.body.message, errors: {} });
+        res.render('index', { message: sess.body.message, dates: businessDays, errors: {} });
     } else {
         console.log('there is no session at top')
-        res.render('index', { message: {dates: businessDays }, errors: {} });
+        res.render('index', { message: {}, dates: businessDays, errors: {} });
     }
 });
 
@@ -41,6 +41,7 @@ router.post('/confirm', function (req, res) {
     // sessionに入れる
     var sess = req.session
     sess.body = {message: req.body}
+    console.log(req.body);
     // validation
     req.assert('name', 'お名前を入力してください').notEmpty();
     req.assert('address', '住所を入力してください').notEmpty();
@@ -48,12 +49,12 @@ router.post('/confirm', function (req, res) {
     req.assert('email', 'メールアドレスを入力してください').notEmpty();
     req.assert('attendNum', '参加人数を入力してください').isInt();
     req.assert('date', '希望日時を入力してください').notEmpty();
-    req.assert('note', '希望日時を入力してください').notEmpty();
+    req.assert('note', '備考を入力してください').notEmpty();
     var errors = req.validationErrors();
     req.getValidationResult().then(function(result) {
         if (!result.isEmpty()) {
             console.log('validation error');
-            res.render('index', { message: req.body, errors: result.array() });
+            res.render('index', { message: req.body, dates: businessDays, errors: result.array(), anchor: 'apply' });
         } else {
             res.render('confirm', { message: req.body });
         }

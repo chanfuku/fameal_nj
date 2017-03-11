@@ -79,11 +79,13 @@
 
 <div class="box3">
     <div class="container">
-      <% for e in @errors : %>
-      <p><%- e.msg %></p>
-      <% end %>
       <form id="contact" action="/confirm" method="post">
         <h4>担当者から返信させていただきます。</h4>
+        <% for e in @errors : %>
+            <ul class="error">
+                <li><%- e.msg %></li>
+            </ul>
+        <% end %>
         <fieldset>
           <input placeholder="お名前" name="name" type="text" value="<%- @message.name %>" tabindex="1" required>
         </fieldset>
@@ -94,16 +96,15 @@
           <input placeholder="電話番号" name="tel" type="tel" value="<%- @message.tel %>" tabindex="3" required>
         </fieldset>
         <fieldset>
-          <input placeholder="メールアドレス" name="email" type="email" value="<%- @message.email %>" tabindex="4" required>
+          <input placeholder="メールアドレス" name="email" type="email" value="<%- @message.email %>" tabindex="4">
         </fieldset>
         <fieldset>
           <input placeholder="参加人数" name="attendNum" type="number" value="<%- @message.attendNum %>" tabindex="5" required>
         </fieldset>
         <fieldset>
-            <!-- <input placeholder="希望日" name="date" type="date" value="<%- @message.date %>" tabindex="6" required> -->
           <select name="date" type="date" required>
-            <% for date in @message.dates : %>
-              <option type="date" value="<%- date %>"><%- date %></option>
+            <% for date in @dates : %>
+            <option type="date" value="<%- date %>" <% if @message.date == date : %>selected<% end %>><%- date %></option>
             <% end %>
           </select>
         </fieldset>
@@ -268,7 +269,6 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 	  <li><a href="#">お問い合わせ</a></li>
     </ul>
 </nav>
-
 <script src="/public/third_party/jquery/dist/jquery.js"></script>
 <script src="/public/javascripts/index.js"></script>
 <script src="/public/javascripts/resize.js"></script>
