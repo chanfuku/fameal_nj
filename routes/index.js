@@ -1,6 +1,19 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const router = express.Router();
+const moment = require("moment");
+
+// 営業日取得
+moment.locale('ja', {weekdays: ["日","月","火","水","木","金","土"]});
+let targetWeekday = ['土', '日'];
+var businessDays = [];
+for (var i = 1; i < 90; i++) {
+    var date = moment().add(i, 'days');
+    var weekday = date.format('dddd');
+    if (targetWeekday.indexOf(weekday) > -1) {
+        businessDays.push(date.format('MM月DD日dddd曜日'));
+    }
+}
 
 // Create a SMTP transporter object
 let transporter = nodemailer.createTransport({
@@ -13,15 +26,13 @@ let transporter = nodemailer.createTransport({
 
 // デフォルトルーティング
 router.get('/', function (req, res) {
-    console.log(process.env.EMAIL_USER);
-    console.log(process.env.EMAIL_PASS);
     var sess = req.session
     if (sess.body != null) {
         console.log('session loaded at top')
         res.render('index', { message: sess.body.message, errors: {} });
     } else {
         console.log('there is no session at top')
-        res.render('index', { message: {}, errors: {} });
+        res.render('index', { message: {dates: businessDays }, errors: {} });
     }
 });
 
