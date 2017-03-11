@@ -3,7 +3,7 @@ $(function() {
   var $elem = $('.js-image-switch');
   // 置換の対象とするsrc属性の末尾の文字列。
   var sp = '_sp.jpg';
-  var pc = '_pc.png';
+  var pc = '_pc.jpg';
   // 画像を切り替えるウィンドウサイズ。
   var replaceWidth = 879;
 
@@ -18,7 +18,7 @@ $(function() {
       if(windowWidth >= replaceWidth) {
         $this.attr('src', $this.attr('src').replace(sp, pc));
 
-      // ウィンドウサイズが768px未満であれば_pcを_spに置換する。
+      // ウィンドウサイズが879px未満であれば_pcを_spに置換する。
       } else {
         $this.attr('src', $this.attr('src').replace(pc, sp));
       }
