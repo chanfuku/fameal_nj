@@ -50,9 +50,9 @@ fieldset {
 }
 .fieldName::before {
     margin-right: 2%;
-    content: "※";
+    content: "*";
     color: red;
-    font-size: 20%;
+    font-size: 150%;
 }
 
 #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="number"], #contact textarea {
