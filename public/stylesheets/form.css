@@ -18,7 +18,9 @@
     width: 320px;
     height: 40px;
     background: white;
-    margin: 0 0 5px;
+	border:1px solid #CCC;
+	background:#FFF;
+	margin:0 0 10px;
 }
 
 #contact h3 {
@@ -42,11 +44,22 @@ fieldset {
 	width: 300px;
 }
 
+.fieldName {
+    text-align: left;
+    font-size: 15px;
+}
+.fieldName::before {
+    margin-right: 2%;
+    content: "※";
+    color: red;
+    font-size: 20%;
+}
+
 #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="number"], #contact textarea {
 	width:300px;
 	border:1px solid #CCC;
 	background:#FFF;
-	margin:0 0 5px;
+	margin:0 0 10px;
 	padding:10px;
 }
 
