@@ -14,7 +14,7 @@ $(function() {
     // ページ内にあるすべての`.js-image-switch`に適応される。
     $elem.each(function() {
       var $this = $(this);
-      // ウィンドウサイズが879px以上であれば_sp.jpgを_pc.pngに置換する。
+      // ウィンドウサイズが879px以上であれば_sp.jpgを_pc.jpgに置換する。
       if(windowWidth >= replaceWidth) {
         $this.attr('src', $this.attr('src').replace(sp, pc));
 
