@@ -88,23 +88,23 @@
         <% end %>
         <fieldset>
           <div class="fieldName">お名前</div>
-          <input placeholder="お名前" name="name" type="text" value="<%- @message.name %>" autocomplete="on" required>
+          <input placeholder="山田太郎" name="name" type="text" value="<%- @message.name %>" autocomplete="on" required>
         </fieldset>
         <fieldset>
           <div class="fieldName">年齢</div>
-          <input placeholder="年齢" name="age" type="number" value="<%- @message.age %>" min="20" autocomplete="on" required>
+          <input placeholder="例) 80" name="age" type="number" value="<%- @message.age %>" min="20" autocomplete="on" required>
         </fieldset>
         <fieldset>
           <div class="fieldName">住所</div>
-          <input placeholder="住所" name="address" type="text" value="<%- @message.address %>" autocomplete="on" required>
+          <input placeholder="例) 東京都〇〇区〇町1-1-1" name="address" type="text" value="<%- @message.address %>" autocomplete="on" required>
         </fieldset>
         <fieldset>
           <div class="fieldName">電話番号</div>
-          <input placeholder="電話番号" name="tel" type="tel" value="<%- @message.tel %>" autocomplete="on" required>
+          <input placeholder="例) 090-1234-5678" name="tel" type="tel" value="<%- @message.tel %>" autocomplete="on" required>
         </fieldset>
         <fieldset>
           <div class="fieldName">メールアドレス</div>
-          <input placeholder="メールアドレス" name="email" type="email" value="<%- @message.email %>" autocomplete="on" required>
+          <input placeholder="例) xxxxx@gmail.com" name="email" type="email" value="<%- @message.email %>" autocomplete="on" required>
         </fieldset>
         <fieldset>
           <div class="fieldName">希望日時</div>
@@ -122,7 +122,7 @@
         </fieldset>
         <fieldset>
           <div class="fieldName">参加予定人数</div>
-          <input placeholder="参加人数" name="attendNum" type="number" value="<%- @message.attendNum %>" autocomplete="on" min="1" required>
+          <input placeholder="例) 1" name="attendNum" type="number" value="<%- @message.attendNum %>" autocomplete="on" min="1" required>
         </fieldset>
         <fieldset>
           <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">確認</button>
@@ -264,6 +264,7 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
     </div>
 </div>
 
+
 <a class="menu-trigger" id="menuBtn" href="#">
 	<span></span>
 	<span></span>
@@ -282,6 +283,7 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 	  <li><a href="#">お問い合わせ</a></li>
     </ul>
 </nav>
+
 <script src="/public/third_party/jquery/dist/jquery.js"></script>
 <script src="/public/javascripts/index.js"></script>
 <script src="/public/javascripts/resize.js"></script>
