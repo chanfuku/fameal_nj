@@ -78,9 +78,9 @@ router.post('/confirm', function (req, res) {
 });
 
 // submitメール送信
-router.get('/submit', function (req, res) {
+router.post('/submit', function (req, res) {
     // Message object
-    var mes = req.session.body.message
+    var mes = req.body
     let message = {
         // Comma separated list of recipients
         to: mes.email,
@@ -93,14 +93,13 @@ router.get('/submit', function (req, res) {
         if (error) {
             console.log('Error occurred');
             console.log(error.message);
-            return;
         }
         console.log('Message sent successfully!');
-        console.log('Server responded with "%s"', info.res);
         transporter.close();
+        console.log(info);
+        consoloe.log(message);
+        return info.response;
     });
-    req.session.destroy();
-    res.redirect(302, "/");
 });
 
 module.exports = router;
