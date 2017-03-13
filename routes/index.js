@@ -40,6 +40,18 @@ router.get('/', function (req, res) {
     }
 });
 
+// 再入力画面(確認画面からの戻り)
+router.get('/input', function (req, res) {
+    var sess = req.session
+    if (sess.body != null) {
+        console.log('session loaded at input')
+        res.render('input', { message: sess.body.message, dates: businessDays, times: businessHours, errors: {} });
+    } else {
+        console.log('there is no session at input')
+        res.render('input', { message: {}, dates: businessDays, times: businessHours, errors: {} });
+    }
+});
+
 // 確認画面へ
 router.post('/confirm', function (req, res) {
     // sessionに入れる
@@ -58,7 +70,7 @@ router.post('/confirm', function (req, res) {
     req.getValidationResult().then(function(result) {
         if (!result.isEmpty()) {
             console.log('validation error');
-            res.render('index', { message: req.body, dates: businessDays, times: businessHours, errors: result.array(), anchor: 'apply' });
+            res.render('input', { message: req.body, dates: businessDays, times: businessHours, errors: result.array() });
         } else {
             res.render('confirm', { message: req.body });
         }
