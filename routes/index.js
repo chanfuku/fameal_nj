@@ -1,5 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
+const smtpTransport = require('nodemailer-smtp-transport');
 const router = express.Router();
 const moment = require("moment");
 
@@ -20,13 +21,21 @@ for (var i = 1; i < 25; i++) {
 }
 
 // Create a SMTP transporter object
-let transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+//let transporter = nodemailer.createTransport({
+//    service: 'Gmail',
+//    auth: {
+//        user: process.env.EMAIL_USER,
+//        pass: process.env.EMAIL_PASS
+//    }
+//});
+let transporter = nodemailer.createTransport( smtpTransport({
+    host : process.env.EMAIL_HOST,
+    port : 587,
+    auth : {
+        user : process.env.EMAIL_USER, // メールアドレス
+        pass : process.env.EMAIL_PASS // メールアドレスパスワード
     }
-});
+}));
 
 // デフォルトルーティング
 router.get('/', function (req, res) {
@@ -82,23 +91,28 @@ router.post('/submit', function (req, res) {
     // Message object
     var mes = req.body
     let message = {
-        // Comma separated list of recipients
+        from: 'fameal <' + process.env.EMAIL_USER + '>',
         to: mes.email,
-        // Subject of the message
-        subject: '[fameal]予約完了', //
-        // plaintext body
+        subject: '[fameal]予約完了',
         text: mes.name + '様の予約日時は' + mes.date + 'です。'
     };
+
+    res.contentType('application/json');
     transporter.sendMail(message, (error, info) => {
         if (error) {
             console.log('Error occurred');
-            console.log(error.message);
+            console.log(error);
+            transporter.close();
+            var data = [{data: null, status: '500', config: {}, statusText: ""}];
+            var json = JSON.stringify(data);
+            res.send(json);
         }
+        console.log(info);
         console.log('Message sent successfully!');
         transporter.close();
-        console.log(info);
-        consoloe.log(message);
-        return info.response;
+        var data = [{data: null, status: '200', config: {}, statusText: ""}];
+        var json = JSON.stringify(data);
+        res.send(json);
     });
 });
 
