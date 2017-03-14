@@ -50,23 +50,12 @@ angular.module('myApp')
                         attendNum: $scope.attendNum
                     }
                 }).
-                then(function onSuccess(response) {
-                    console.log('aaa');
-                    $scope.result = "登録完了";
-                }, function onError(response) {
+                then(function successCallback(response) {
+                    $scope.result = "送信されました。担当者からご連絡致します。";
+                }, function errorCallback(response) {
                     //通信に失敗
-                    console.log('bbb');
-                    $scope.result = '!!通信に失敗しました!!';
+                    $scope.result = '通信に失敗しました。';
                 });
-                //.success(function(data, status, headers, config){
-                //    console.log('aaa');
-                //    $scope.result = "登録完了";
-                //})
-                //.error(function(data, status, headers, config){
-                //    console.log('bbb');
-                //    $scope.result = '!!通信に失敗しました!!';
-                //});
             }
-
         }
     ]);

@@ -92,14 +92,18 @@ router.post('/submit', function (req, res) {
     transporter.sendMail(message, (error, info) => {
         if (error) {
             console.log('Error occurred');
-            console.log(error.message);
+            console.log(error);
         }
+        console.log(info);
         console.log('Message sent successfully!');
         transporter.close();
-        console.log(info);
-        consoloe.log(message);
-        return info.response;
     });
+
+    // response作成
+    res.contentType('application/json');
+    var data = [{data: null, status: '200', config: {}, statusText: ""}];
+    var json = JSON.stringify(json);
+    res.send(json);
 });
 
 module.exports = router;
