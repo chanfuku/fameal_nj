@@ -102,10 +102,6 @@ router.post('/submit', function (req, res) {
         if (error) {
             console.log('Error occurred');
             console.log(error);
-            transporter.close();
-            var data = [{data: null, status: '500', config: {}, statusText: ""}];
-            var json = JSON.stringify(data);
-            res.send(json);
         }
         console.log(info);
         console.log('Message sent successfully!');
