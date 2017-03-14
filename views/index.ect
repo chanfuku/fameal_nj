@@ -28,13 +28,13 @@
 
     <nav class="menu" id="menu">
         <ul>
-	        <li><a href="#about">食卓を共にについて</a></li>
-	        <li><a href="#usage">ご利用方法</a></li>
-	        <li><a href="#price">料金</a></li>
-	        <li><a href="#apply">お申し込み</a></li>
-	        <li><a href="#thoughts">サービス理念</a></li>
-	        <li><a href="#policy">利用規約</a></li>
-	        <li><a href="#">お問い合わせ</a></li>
+	        <li><a ng-click="jumpTo('about')">食卓を共にについて</a></li>
+	        <li><a ng-click="jumpTo('usage')">ご利用方法</a></li>
+	        <li><a ng-click="jumpTo('price')">料金</a></li>
+	        <li><a ng-click="jumpTo('apply')">お申し込み</a></li>
+	        <li><a ng-click="jumpTo('thoughts')">サービス理念</a></li>
+	        <li><a ng-click="jumpTo('policy')">利用規約</a></li>
+	        <li><a ng-click="jumpTo('inquiry')">お問い合わせ</a></li>
 	    </ul>
     </nav>
 </div>
@@ -59,7 +59,7 @@
 
 <div class="box_img relative">
     <img src="/public/images/img_2_pc.jpg" alt="" class="js-image-switch contentImg">
-    <a href="#apply" class="button">お申し込みはこちら</a>
+    <a ng-click="jumpTo('apply')" class="button">お申し込みはこちら</a>
 </div>
 
 <div class="space" id="price">
@@ -287,18 +287,17 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 <!-- モーダルメニュー -->
 <nav class="modalmenu" id="js__nav">
     <ul>
-	  <li><a href="#about">食卓を共にについて</a></li>
-	  <li><a href="#usage">ご利用方法</a></li>
-	  <li><a href="#price">料金</a></li>
-	  <li><a href="#apply">お申し込み</a></li>
-	  <li><a href="#thoughts">サービス理念</a></li>
-	  <li><a href="#policy">利用規約</a></li>
-	  <li><a href="#">お問い合わせ</a></li>
+	    <li><a ng-click="jumpTo('about')">食卓を共にについて</a></li>
+	    <li><a ng-click="jumpTo('usage')">ご利用方法</a></li>
+	    <li><a ng-click="jumpTo('price')">料金</a></li>
+	    <li><a ng-click="jumpTo('apply')">お申し込み</a></li>
+	    <li><a ng-click="jumpTo('thoughts')">サービス理念</a></li>
+	    <li><a ng-click="jumpTo('policy')">利用規約</a></li>
+	    <li><a ng-click="jumpTo('inquiry')">お問い合わせ</a></li>
     </ul>
 </nav>
 
 <script src="/public/third_party/jquery/dist/jquery.js"></script>
-<script src="/public/javascripts/index.js"></script>
 <script src="/public/javascripts/resize.js"></script>
 <script src="/public/javascripts/modal.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>

@@ -15,6 +15,11 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
              $scope.show_conf=false;
              $scope.show_comp=true;
          }
+         $scope.jumpTo = function(id) {
+             $location.hash(id);
+             $anchorScroll();
+             $location.url($location.path());
+         }
      }
 ]);
 
