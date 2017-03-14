@@ -50,14 +50,16 @@ router.post('/submit', function (req, res) {
         if (error) {
             console.log('Error occurred');
             console.log(error);
+            transporter.close();
+            res.status(500);
+        } else {
+            console.log(info);
+            console.log('Message sent successfully!');
+            transporter.close();
+            // ToDo: エラーハンドリング
+            res.status(200);
         }
-        console.log(info);
-        console.log('Message sent successfully!');
-        transporter.close();
-        // ToDo: エラーハンドリング
-        var data = [{data: null, status: '200', config: {}, statusText: ""}];
-        var json = JSON.stringify(data);
-        res.send(json);
+        res.end();
     });
 });
 

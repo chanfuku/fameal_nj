@@ -80,7 +80,7 @@
 
 <div class="box3">
     <div class="container">
-      <form name="myForm" id="contact" ng-show="show_input" novalidate>
+      <form name="myForm" class="apply" ng-show="show_input" novalidate>
         <h4>担当者から返信させていただきます。</h4>
         <span ng-repeat="error_message in error_messages" style="color:red">{{error_message}}<br></span>
         <fieldset>
@@ -122,24 +122,26 @@
           <input placeholder="例) 1" name="attendNum" type="number" autocomplete="on" min="1" ng-model="attendNum">
         </fieldset>
         <fieldset>
-          <button ng-click="conf()" name="submit" type="submit" id="contact-submit" data-submit="...Sending">確認</button>
+          <button ng-click="conf()" type="submit">確認</button>
         </fieldset>
       </form>
-      <div class="confirm" ng-show="show_conf">
+      <div class="apply confirm" ng-show="show_conf">
         <h4>下記の内容を送信します。</h4>
-          お名前： {{name_conf}}<br>
-          年齢： {{age_conf}}<br>
-          住所： {{address_conf}}<br>
-          電話番号： {{tel_conf}}<br>
-          メールアドレス： {{email_conf}}<br>
-          希望日時： {{date_conf}}<br>
-          時間： {{time_conf}}<br>
-          参加予定人数： {{attendNum_conf}}<br>
-          <button ng-click="back()" >戻る</button>
-          <button ng-click="comp()" >送信</button>
+        <p>お名前： {{name_conf}}</p>
+        <p>年齢： {{age_conf}}</p>
+        <p>住所： {{address_conf}}</p>
+        <p>電話番号： {{tel_conf}}</p>
+        <p>メールアドレス： {{email_conf}}</p>
+        <p>希望日時： {{date_conf}}</p>
+        <p>時間： {{time_conf}}</p>
+        <p>参加予定人数： {{attendNum_conf}}</p>
+        <fieldset>
+            <button ng-click="back()" type="back">戻る</button>
+            <button ng-click="comp()" type="submit" data-submit="...送信中">送信</button>
+        </fieldset>
       </div>
-      <div id="show" ng-show="show_comp">
-      {{result}}<br>
+      <div class="apply complete" ng-show="show_comp">
+          <p>{{result}}</p>
       </div>
     </div>
 </div>

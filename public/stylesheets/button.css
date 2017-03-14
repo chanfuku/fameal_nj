@@ -1,5 +1,6 @@
 /* ########### 全体 ########### */
 .button {
+    cursor: pointer;
     position: absolute;
     left: 40%;
     right: 40%;
@@ -14,6 +15,8 @@
     background-color:white;
     border-radius:25px;
 }
+
+.button:hover { background-color:#f8f8f8; }
 
 /* ########### 879px以下 ########### */
 @media (max-width: 879px) {

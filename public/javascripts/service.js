@@ -36,6 +36,7 @@ angular.module('myApp')
             }
 
             this.comp = function($scope){
+                $scope.result = "送信中・・・";
                 $result = $http({
                     method: 'POST',
                     url: '/submit',
@@ -54,7 +55,7 @@ angular.module('myApp')
                     $scope.result = "送信されました。担当者からご連絡致します。";
                 }, function errorCallback(response) {
                     //通信に失敗
-                    $scope.result = '通信に失敗しました。';
+                    $scope.result = '送信エラーが発生しました。';
                 });
             }
         }
