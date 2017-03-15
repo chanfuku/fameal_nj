@@ -1,0 +1,64 @@
+#footer {
+    margin-top: 150px;
+    z-index: 1001;
+    background: #F9F9F9;
+    margin-top: 100px;
+}
+#footer .container {
+    position: relative;
+    margin: 0 20%;
+}
+.footer-nav-list {
+    margin: 0 20px 0;
+    padding: 0;
+    list-style: none;
+}
+.footer ul {
+    margin: 15px 0;
+    padding-left: 24px;
+}
+.footer-social-icon {
+    padding: 40px 0 20px 0;
+    margin: 0;
+    text-align: center;
+    font-size: 9px;
+    line-height: 1.555555555555556;
+    color: #808080;
+}
+.footer-copyright {
+    padding: 40px 0 20px 0;
+    margin: 0;
+    text-align: center;
+    font-size: 9px;
+    line-height: 1.555555555555556;
+    color: #808080;
+}
+.footer-nav-item {
+    border-top: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c8;
+}
+.footer-nav-item + .footer-nav-item {
+    border-top: none;
+}
+.footer-nav-link:hover, .footer-nav-link:focus, .footer-nav-link:active {
+    color: #b4b4b4;
+    text-decoration: none;
+}
+.footer-nav-link {
+    font-size: 0.8em;
+    line-height: 1.208333333333333;
+    display: block;
+    padding: 15px 0;
+    line-height: 1.263157894736842;
+    color: #1e1e1e;
+}
+
+/* ########### 879px以下 ########### */
+@media (max-width: 879px) {
+#footer.container {
+    position: relative;
+    margin: 0 auto;
+    width: 879px;
+}
+}
+
