@@ -39,8 +39,9 @@ router.post('/submit', function (req, res) {
     // Message object
     var mes = req.body
     let message = {
-        from: process.env.EMAIL_USER,
+        from: 'fameal <' + process.env.EMAIL_USER + '>',
         to: mes.email,
+        bcc: process.env.EMAIL_USER,
         subject: '[fameal]予約完了',
         text: mes.name + '様の予約日時は' + mes.date + 'です。'
     };
