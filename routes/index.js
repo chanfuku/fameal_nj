@@ -47,19 +47,18 @@ router.post('/submit', function (req, res) {
 
     res.contentType('application/json');
     transporter.sendMail(message, (error, info) => {
+        // ToDo: エラーハンドリング
         if (error) {
             console.log('Error occurred');
             console.log(error);
             transporter.close();
-            res.status(500);
+            res.status(500).end();
         } else {
             console.log(info);
             console.log('Message sent successfully!');
             transporter.close();
-            // ToDo: エラーハンドリング
-            res.status(200);
+            res.status(200).end();
         }
-        res.end();
     });
 });
 
