@@ -5,14 +5,14 @@ angular.module('myApp')
             this.conf = function($scope){
                 // 入力チェック
                 var error = new Array();
-                error = check_name($scope.name, error);
-                error = check_age($scope.age, error);
-                error = check_address($scope.address, error);
-                error = check_tel($scope.tel, error);
-                error = check_email($scope.email, error);
-                error = check_date($scope.date, error);
-                error = check_time($scope.time, error);
-                error = check_attendNum($scope.attendNum, error);
+                //error = check_name($scope.name, error);
+                //error = check_age($scope.age, error);
+                //error = check_address($scope.address, error);
+                //error = check_tel($scope.tel, error);
+                //error = check_email($scope.email, error);
+                //error = check_date($scope.date, error);
+                //error = check_time($scope.time, error);
+                //error = check_attendNum($scope.attendNum, error);
                 if(error.length == 0){
                     $scope.name_conf = $scope.name;
                     $scope.age_conf = $scope.age;
