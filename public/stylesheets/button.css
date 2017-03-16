@@ -4,7 +4,7 @@
     position: absolute;
     left: 40%;
     right: 40%;
-    bottom: 15%;
+    bottom: 10%;
     font-size:1em;
     text-decoration:none;
     display:block;
@@ -23,7 +23,7 @@
 .button {
     left: 30%;
     right: 30%;
-    bottom: 7%;
+    bottom: 6%;
 }
 .menu-trigger,
 .menu-trigger span {

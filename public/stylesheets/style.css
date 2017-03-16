@@ -11,10 +11,10 @@ body	{margin: 0;
 .site img	{border: none}
 
 /* box */
-.box3, .box4, .space, .box_img, .box7   {text-align: center;
+.box3, .box4, .space, .box_img, .box7, .box8   {text-align: center;
     margin-left: auto;
     margin-right: auto;}
-.box4, .box7 {position: relative;}
+.box4, .box7, .box8 {position: relative;}
 
 .space {height: 100px;
     display: table;}
@@ -39,8 +39,43 @@ body	{margin: 0;
     width: 100%;
     margin-left: auto; 
     margin-right: auto;}
+.box4 {display: table;
+    max-width: 1200px;
+    background-size:100% auto;
+    display: block;
+    padding-top: 60%;
+    background-repeat: no-repeat;
+    background-image: url("../images/img_1_pc.jpg");}
+.box5 {display: table;
+    max-width: 1200px;
+    background-size:100% auto;
+    display: block;
+    padding-top: 80%;
+    background-repeat: no-repeat;
+    background-image: url("../images/img_2_pc.jpg");}
+.box6 {display: table;
+    max-width: 1200px;
+    background-size:100% auto;
+    display: block;
+    padding-top: 80%;
+    background-repeat: no-repeat;
+    background-image: url("../images/img_3_pc.jpg");}
 
-.box7 {display: table;}
+.box7 {display: table;
+    max-width: 1200px;
+    background-size:100% auto;
+    display: block;
+    padding-top: 50%;
+    background-repeat: no-repeat;
+    background-image: url("../images/img_4_pc.jpg");}
+.box8 {
+    max-width: 1200px;
+    background-size:100% auto;
+    display: block;
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/img_5_pc.jpg");
+}
 .box7-inner {position: absolute;
     top: 10%;
     bottom: 10%;
@@ -81,12 +116,19 @@ ul.error {color: red;
 .box3 p {font-size: 150%;
     line-height: 1.8;
     margin-bottom: 5%;}
+.box4 {background-image: url("../images/img_1_sp.jpg");}
 .box4 p {font-size: 80%;}
 .box4 .catch {font-size: 120%;
     line-height:3px;
     font-weight: bold;}
+.box5 {padding-top: 133%;
+    background-image: url("../images/img_2_sp.jpg");}
+.box6 {padding-top: 100%;
+    background-image: url("../images/img_3_sp.jpg");}
 .contents {top: 7%;}
-
+.box7 {padding-top: 70%;
+    background-image: url("../images/img_4_sp.jpg");}
+.box8 {background-image: url("../images/img_5_sp.jpg");}
 .space-inner .line {
     width: .5rem;
 	border-top: solid 1px black;
