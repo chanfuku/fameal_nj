@@ -9,7 +9,8 @@ body	{margin: 0;
 .site h1	{margin: 0;
 	font-size: 10px}
 .site img	{border: none}
-
+.wrapper {max-width: 1200px;
+    margin: 0 auto;}
 /* box */
 .box3, .box4, .space, .box_img, .box7, .box8   {text-align: center;
     margin-left: auto;
@@ -39,43 +40,22 @@ body	{margin: 0;
     width: 100%;
     margin-left: auto; 
     margin-right: auto;}
-.box4 {display: table;
-    max-width: 1200px;
-    background-size:100% auto;
-    display: block;
-    padding-top: 60%;
-    background-repeat: no-repeat;
+.box4 {padding-top: calc(800 / 1200 * 100%);
+    background-size: contain;
     background-image: url("../images/img_1_pc.jpg");}
-.box5 {display: table;
-    max-width: 1200px;
-    background-size:100% auto;
-    display: block;
-    padding-top: 80%;
-    background-repeat: no-repeat;
+.box5 {
+    padding-top: calc(1063 / 1200 * 100%);
+    background-size: contain;
     background-image: url("../images/img_2_pc.jpg");}
-.box6 {display: table;
-    max-width: 1200px;
-    background-size:100% auto;
-    display: block;
-    padding-top: 80%;
-    background-repeat: no-repeat;
+.box6 {padding-top: calc(1090 / 1200 * 100%);
+    background-size: contain;
     background-image: url("../images/img_3_pc.jpg");}
-
-.box7 {display: table;
-    max-width: 1200px;
-    background-size:100% auto;
-    display: block;
-    padding-top: 50%;
-    background-repeat: no-repeat;
+.box7 {padding-top: calc(835 / 1200 * 100%);
+    background-size: contain;
     background-image: url("../images/img_4_pc.jpg");}
-.box8 {
-    max-width: 1200px;
-    background-size:100% auto;
-    display: block;
-    padding-top: 100%;
-    background-repeat: no-repeat;
-    background-image: url("../images/img_5_pc.jpg");
-}
+.box8 {padding-top: calc(1262 / 1200 * 100%);
+    background-size: contain;
+    background-image: url("../images/img_5_pc.jpg");}
 .box7-inner {position: absolute;
     top: 10%;
     bottom: 10%;
@@ -121,13 +101,12 @@ ul.error {color: red;
 .box4 .catch {font-size: 120%;
     line-height:3px;
     font-weight: bold;}
-.box5 {padding-top: 133%;
+.box5 {padding-top: calc(1014 / 752 * 100%);
     background-image: url("../images/img_2_sp.jpg");}
-.box6 {padding-top: 100%;
+.box6 {padding-top: calc(1526 / 1500 * 100%);
     background-image: url("../images/img_3_sp.jpg");}
 .contents {top: 7%;}
-.box7 {padding-top: 70%;
-    background-image: url("../images/img_4_sp.jpg");}
+.box7 {background-image: url("../images/img_4_sp.jpg");}
 .box8 {background-image: url("../images/img_5_sp.jpg");}
 .space-inner .line {
     width: .5rem;
@@ -204,8 +183,7 @@ ul.error {color: red;
 
 /* 全体の横幅を固定 */
 .boxA-inner, .box3, .box4, .box_img
-    {width: 1200px;
-    text-align: center;
+    {text-align: center;
 	margin-left: auto;
 	margin-right: auto}
 
