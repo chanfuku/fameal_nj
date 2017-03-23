@@ -53,12 +53,12 @@
     color: #1e1e1e;
 }
 
-/* ########### 879px以下 ########### */
-@media (max-width: 879px) {
+/* ########### 1007px以下 ########### */
+@media (max-width: 1007px) {
 #footer.container {
     position: relative;
     margin: 0 auto;
-    width: 879px;
+    width: 100%;
 }
 }
 

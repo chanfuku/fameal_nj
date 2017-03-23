@@ -1,7 +1,0 @@
-.spImg { display: block; }
-.pcImg { display: none; }
-
-@media (min-width: 880px) {
-.spImg { display: none; }
-.pcImg { display: block; }
-}
