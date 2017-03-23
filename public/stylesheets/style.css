@@ -87,8 +87,8 @@ ul.error {color: red;
     list-style: none;
 }
 
-/* ########### 879px以下 ########### */
-@media (max-width: 879px) {
+/* ########### 1007px以下 ########### */
+@media (max-width: 1007px) {
 
 /* ナビゲーションメニュー（縦並び） */
 .menu	{display: none;}
@@ -121,8 +121,8 @@ ul.error {color: red;
 .box4 p.contents {margin-top:14px;}
 }
 
-/* ########### 880px以上 ########### */
-@media (min-width: 880px) {
+/* ########### 1008px以上 ########### */
+@media (min-width: 1008px) {
 
 /* トグルボタン */
 #menubtn	{display: none}
@@ -162,7 +162,7 @@ ul.error {color: red;
 	width: auto}
 .box2	{float: right;
 	width: auto;
-    padding-top: 30px;}
+    padding-top: 37px;}
 
 .space {height: 200px;}
 .space p {font-size: 30px;}

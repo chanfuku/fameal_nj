@@ -18,8 +18,8 @@
 
 .button:hover { background-color:#f8f8f8; }
 
-/* ########### 879px以下 ########### */
-@media (max-width: 879px) {
+/* ########### 1007px以下 ########### */
+@media (max-width: 1007px) {
 .button {
     left: 30%;
     right: 30%;

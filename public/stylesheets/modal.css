@@ -1,5 +1,5 @@
-/* ########### 879px以下 ########### */
-@media (max-width: 879px) {
+/* ########### 1007px以下 ########### */
+@media (max-width: 1007px) {
 nav, ul {padding: 0;}
 a {
     text-decoration: none;
@@ -55,8 +55,8 @@ a {
 }
 }
 
-/* ########### 880px以上 ########### */
-@media (min-width: 880px) {
+/* ########### 1008px以上 ########### */
+@media (min-width: 1008px) {
 
 /* トグルボタン */
 .modalmenu	{display: none}
