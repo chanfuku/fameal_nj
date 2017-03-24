@@ -43,7 +43,7 @@
 </div>
 
 <div class="box3">
-    <p>高齢者の皆様に、<br>食卓で楽しい時間を<br>ご提供します。</p>
+    <p>中高年の皆様に、<br>食卓で楽しい時間を<br>ご提供します。</p>
 </div>
 
 <div class="box4" id="about">
@@ -78,7 +78,7 @@
 
 <div class="box3">
     <div class="container">
-      <fieldset>
+      <fieldset ng-show="show_entry_type">
         <div class="fieldName">お問い合わせ種別</div>
         <select type="date" ng-model="entryType" ng-change="changeEntryType()">
           <option value="0" selected>お申し込み</option>
@@ -87,7 +87,7 @@
       </fieldset>
       <h4>担当者から返信させていただきます。</h4>
       <form name="questionForm" class="apply" ng-show="show_input_question">
-      <span ng-repeat="error_message in error_messages" style="color:red">{{error_message}}<br></span>
+      <span ng-repeat="error_message in error_messages" style="color:red" ng-cloak>{{error_message}}<br></span>
         <fieldset>
           <div class="fieldName required">お問い合わせ内容</div>
           <select type="date" ng-model="questionType">
@@ -187,8 +187,9 @@
             <button ng-click="comp()" type="submit">送信</button>
         </fieldset>
       </div>
-      <div class="apply complete" ng-show="show_comp">
-          <p>{{result}}</p>
+      <div class="apply complete">
+          <p ng-show="show_progress"><img src="/public/images/loading.gif"></p>
+          <p ng-show="show_comp">{{result}}</p>
       </div>
     </div>
 </div>
@@ -323,7 +324,6 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
         </p>
     </div>
 </div>
-
 <footer id="footer">
 	<div class="container">
 		<ul class="footer-nav-list">
@@ -366,6 +366,7 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 
 <!-- モーダルメニュー -->
 <nav class="modalmenu" id="js__nav">
+    <div class="modal-inner">
     <ul>
 	    <li><a ng-click="jumpTo('about')">食卓を共にについて</a></li>
 	    <li><a ng-click="jumpTo('usage')">ご利用方法</a></li>
@@ -375,6 +376,7 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 	    <li><a ng-click="jumpTo('policy')">利用規約</a></li>
 	    <li><a ng-click="jumpTo('inquiry')">お問い合わせ</a></li>
     </ul>
+    </div>
 </nav>
 
 <script src="/public/third_party/jquery/dist/jquery.js"></script>

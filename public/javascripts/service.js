@@ -34,6 +34,7 @@ angular.module('myApp')
                     $scope.attendNum_conf = $scope.attendNum;
                     $scope.show_conf=true;
                     $scope.show_input=false;
+                    $scope.show_entry_type=false;
                 } else {
                     $scope.error_messages = error;
                 }
@@ -52,6 +53,7 @@ angular.module('myApp')
                     $scope.detail_conf = $scope.detail;
                     $scope.show_conf_question=true;
                     $scope.show_input_question=false;
+                    $scope.show_entry_type=false;
                 } else {
                     $scope.error_messages = error;
                 }
@@ -61,15 +63,17 @@ angular.module('myApp')
                 $scope.error_messages = "";
                 $scope.show_input=true;
                 $scope.show_conf=false;
+                $scope.show_entry_type=true;
             }
             this.backQuestion = function($scope){
                 $scope.error_messages = "";
                 $scope.show_input_question=true;
                 $scope.show_conf_question=false;
+                $scope.show_entry_type=true;
             }
 
             this.comp = function($scope){
-                $scope.result = "送信中・・・";
+                $scope.show_progress = true;
                 $result = $http({
                     method: 'POST',
                     url: '/submit',
@@ -85,14 +89,16 @@ angular.module('myApp')
                     }
                 }).
                 then(function successCallback(response) {
+                    $scope.show_progress = false;
                     $scope.result = "送信されました。担当者からご連絡致します。";
                 }, function errorCallback(response) {
                     //通信に失敗
+                    $scope.show_progress = false;
                     $scope.result = '送信エラーが発生しました。';
                 });
             }
             this.compQuestion = function($scope){
-                $scope.result = "送信中・・・";
+                $scope.show_progress = true;
                 $result = $http({
                     method: 'POST',
                     url: '/submitQuestion',
@@ -105,9 +111,11 @@ angular.module('myApp')
                     }
                 }).
                 then(function successCallback(response) {
+                    $scope.show_progress = false;
                     $scope.result = "送信されました。担当者からご連絡致します。";
                 }, function errorCallback(response) {
                     //通信に失敗
+                    $scope.show_progress = false;
                     $scope.result = '送信エラーが発生しました。';
                 });
             }
