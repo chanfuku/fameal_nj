@@ -1,0 +1,16 @@
+- hosts: targets
+  connection: local
+  user: vagrant
+  become: yes
+  tasks:
+    - name: yum_install_packages
+      yum: name={{ item }} state=latest
+      with_items:
+      - epel-release
+      - nodejs
+      - npm
+    - name: install modules
+      command: cd /vagrant/ && npm install
+    - name: boot fameal app
+      command: sudo -u vagrant npm start
+
