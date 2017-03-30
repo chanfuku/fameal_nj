@@ -1,0 +1,32 @@
+{
+  "name": "fameal_nj",
+  "scripts": {
+  },
+  "env": {
+    "BASIC_AUTH_PASSWORD": {
+      "required": true
+    },
+    "BASIC_AUTH_USERNAME": {
+      "required": true
+    },
+    "EMAIL_HOST": {
+      "required": true
+    },
+    "EMAIL_PASS": {
+      "required": true
+    },
+    "EMAIL_USER": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
