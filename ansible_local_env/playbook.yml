@@ -12,5 +12,5 @@
     - name: install modules
       command: cd /vagrant/ && npm install
     - name: boot fameal app
-      command: sudo -u vagrant npm start
+      command: sudo -u vagrant nodemon -L -e js,ect
 
