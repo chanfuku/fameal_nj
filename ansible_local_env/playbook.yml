@@ -4,7 +4,7 @@
   become: yes
   tasks:
     - name: yum_install_packages
-      yum: name={{ item }} state=latest
+      yum: name={{ item }} state=present
       with_items:
       - epel-release
       - nodejs
@@ -12,5 +12,4 @@
     - name: install modules
       command: cd /vagrant/ && npm install
     - name: boot fameal app
-      command: sudo -u vagrant nodemon -L -e js,ect
-
+      shell: cd /vagrant/ && node node_modules/nodemon/bin/nodemon.js index.js -L -e js,ect
