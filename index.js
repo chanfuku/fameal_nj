@@ -3,7 +3,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
-const session = require('express-session');
 const basicAuth = require('basic-auth-connect');
 
 // 環境変数読み込み
@@ -21,7 +20,6 @@ if (username && password) {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(expressValidator());
-app.use(session({ secret: 'hogefuga', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true}));
 
 // テンプレートエンジンを ECT に設定
 var ECT = require('ect');
@@ -34,6 +32,8 @@ app.use('/public', express.static('public'));
 
 // ルーティング設定
 app.use('/', require('./routes/index.js'));
+app.use('/submit', require('./routes/submit.js'));
+app.use('/submitQuestion', require('./routes/submitQuestion.js'));
 
 // サーバーをポート 3000 で起動(Herokuも対応)
 app.listen(process.env.PORT || 3000);

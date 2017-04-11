@@ -86,7 +86,7 @@ angular.module('myApp')
                         tel: $scope.tel,
                         email: $scope.email,
                         date: $scope.date,
-                        hour: $scope.hour,
+                        time: $scope.time,
                         attendNum: $scope.attendNum
                     }
                 }).
