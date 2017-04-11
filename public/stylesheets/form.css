@@ -129,3 +129,6 @@ fieldset {
  color:#888;
 }
 
+[ng-cloak] {
+  display: none !important;
+}

@@ -91,38 +91,8 @@
         </div>
     </fieldset>
     <div class="container">
-        <form name="questionForm" class="apply" ng-show="show_input_question">
-        <span ng-repeat="error_message in error_messages" style="color:red" ng-cloak>{{error_message}}<br></span>
-          <fieldset>
-            <div class="fieldName required">お問い合わせ内容</div>
-            <select type="date" ng-model="questionType">
-                <option value="0">サービスについて</option>
-                <option value="1">料金・支払いについて</option>
-                <option value="2">その他</option>
-            </select>
-          </fieldset>
-          <fieldset>
-            <div class="fieldName required">お名前</div>
-            <input placeholder="山田太郎" name="name" type="text" ng-model="name"  autocomplete="on">
-          </fieldset>
-          <fieldset>
-            <div class="fieldName required">メールアドレス</div>
-            <input placeholder="例) xxxxx@gmail.com" name="email" type="email" ng-model="email" autocomplete="on">
-          </fieldset>
-          <fieldset>
-            <div class="fieldName">電話番号</div>
-            <input placeholder="例) 09012345678" name="tel" type="tel" ng-model="tel" autocomplete="on" >
-          </fieldset>
-          <fieldset>
-            <div class="fieldName required">内容詳細</div>
-            <textarea name="detail" ng-model="detail"></textarea>
-          </fieldset>
-          <fieldset>
-            <button ng-click="confQuestion()" type="submit">確認</button>
-          </fieldset>
-        </form>
         <form name="myForm" class="apply" ng-show="show_input" novalidate>
-        <span ng-repeat="error_message in error_messages" style="color:red">{{error_message}}<br></span>
+        <span ng-repeat="error_message in error_messages" style="color:red" ng-cloak>{{error_message}}<br></span>
           <fieldset>
             <div class="fieldName required">お名前</div>
             <input placeholder="山田太郎" name="name" type="text" ng-model="name"  autocomplete="on">
@@ -162,13 +132,48 @@
             <input placeholder="例) 1" name="attendNum" type="text" autocomplete="on" ng-model="attendNum">
           </fieldset>
           <fieldset>
+              <label><input type="checkbox" name="privacy" value="1" ng-model="privacy">利用規約に同意する</label>
+          </fieldset>
+          <fieldset>
             <button ng-click="conf()" type="submit">確認</button>
+          </fieldset>
+        </form>
+        <form name="questionForm" class="apply" ng-show="show_input_question" novalidate>
+        <span ng-repeat="error_message in error_messages" style="color:red" ng-cloak>{{error_message}}<br></span>
+          <fieldset>
+            <div class="fieldName required">お問い合わせ内容</div>
+            <select type="date" ng-model="questionType">
+                <option value="0">サービスについて</option>
+                <option value="1">料金・支払いについて</option>
+                <option value="2">その他</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <div class="fieldName required">お名前</div>
+            <input placeholder="山田太郎" name="name" type="text" ng-model="name"  autocomplete="on">
+          </fieldset>
+          <fieldset>
+            <div class="fieldName required">メールアドレス</div>
+            <input placeholder="例) xxxxx@gmail.com" name="email" type="email" ng-model="email" autocomplete="on">
+          </fieldset>
+          <fieldset>
+            <div class="fieldName">電話番号</div>
+            <input placeholder="例) 09012345678" name="tel" type="tel" ng-model="tel" autocomplete="on" >
+          </fieldset>
+          <fieldset>
+            <div class="fieldName required">内容詳細</div>
+            <textarea name="detail" ng-model="detail"></textarea>
+          </fieldset>
+          <fieldset>
+              <label><input type="checkbox" name="privacy" value="1" ng-model="privacy">利用規約に同意する</label>
+          </fieldset>
+          <fieldset>
+            <button ng-click="confQuestion()" type="submit">確認</button>
           </fieldset>
         </form>
         <div class="apply confirm" ng-show="show_conf_question">
           <h4>下記の内容を送信します。</h4>
           <p>お名前：<span ng-bind="name_conf"> </span></p>
-          <p>年齢：<span ng-bind="age_conf"> </span></p>
           <p>電話番号：<span ng-bind="tel_conf"> </span></p>
           <p>メールアドレス：<span ng-bind="email_conf"></span></p>
           <p>内容詳細：<span ng-bind="detail_conf"></span></p>
