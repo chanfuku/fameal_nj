@@ -23,6 +23,7 @@ angular.module('myApp')
                 error = check_date($scope.date, error);
                 error = check_time($scope.time, error);
                 error = check_attendNum($scope.attendNum, error);
+                error = check_privacy($scope.privacy, error);
                 if(error.length == 0){
                     $scope.name_conf = $scope.name;
                     $scope.age_conf = $scope.age;
@@ -46,6 +47,7 @@ angular.module('myApp')
                 error = check_name($scope.name, error);
                 error = check_email($scope.email, error);
                 error = check_detail($scope.detail, error);
+                error = check_privacy($scope.privacy, error);
                 if(error.length == 0){
                     $scope.name_conf = $scope.name;
                     $scope.tel_conf = $scope.tel;

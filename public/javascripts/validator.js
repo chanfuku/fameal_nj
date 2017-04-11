@@ -67,3 +67,10 @@ function check_detail(data, error) {
     }
     return error;
 }
+
+function check_privacy(data, error) {
+    if (data == "" || data != 1){
+        error.push("「利用規約に同意する」にチェックしてください");
+    }
+    return error;
+}
