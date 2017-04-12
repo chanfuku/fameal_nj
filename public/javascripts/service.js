@@ -49,6 +49,7 @@ angular.module('myApp')
                 error = check_detail($scope.detail, error);
                 error = check_privacy($scope.privacy, error);
                 if(error.length == 0){
+                    $scope.questionType_conf = $scope.questionType;
                     $scope.name_conf = $scope.name;
                     $scope.tel_conf = $scope.tel;
                     $scope.email_conf = $scope.email;

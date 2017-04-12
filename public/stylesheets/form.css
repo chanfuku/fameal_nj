@@ -16,7 +16,7 @@ select[type="date"], option[type="date"] {font:400 15px/40px "Open Sans", Helvet
 }
 
 select {
-    width: 320px;
+    width: 350px;
     height: 40px;
     background: white;
 	border:1px solid #CCC;
@@ -42,8 +42,9 @@ fieldset {
 	margin: auto;
 	padding: 0;
     text-align: left;
-	width: 300px;
+	width: 330px;
 }
+
 
 .fieldName .required {
     text-align: left;
@@ -56,12 +57,18 @@ fieldset {
     font-size: 150%;
 }
 
+.confArea {margin: auto;
+    text-align: left;
+    max-width: 330px;}
+
 .confirm p {
     font-size: 100%;
     line-height: 1.1;
     margin-bottom: 0;
 }
+.confirm { padding-top: 40px; }
 
+.complete { padding: 20px 0; }
 .complete p {
     margin-top: 0;
     font-size: 100%;
@@ -69,7 +76,7 @@ fieldset {
 }
 
 .apply input[type="text"], .apply input[type="email"], .apply input[type="tel"], .apply input[type="number"], .apply textarea {
-	width:300px;
+	width:330px;
 	border:1px solid #CCC;
 	background:#FFF;
 	margin:0 0 10px;
@@ -132,3 +139,4 @@ fieldset {
 [ng-cloak] {
   display: none !important;
 }
+
