@@ -172,7 +172,7 @@
           </fieldset>
         </form>
         <div class="apply confirm" ng-show="show_conf_question">
-          <h4>下記の内容を送信します。</h4>
+          <h4>ご入力頂いた下記の内容に誤りがないかご確認の上、送信してください。</h4>
           <p>お名前：<span ng-bind="name_conf"> </span></p>
           <p>電話番号：<span ng-bind="tel_conf"> </span></p>
           <p>メールアドレス：<span ng-bind="email_conf"></span></p>
@@ -183,7 +183,7 @@
           </fieldset>
         </div>
         <div class="apply confirm" ng-show="show_conf">
-          <h4>下記の内容を送信します。</h4>
+          <h4>ご入力頂いた下記の内容に誤りがないかご確認の上、送信してください。</h4>
           <p>お名前：<span ng-bind="name_conf"> </span></p>
           <p>年齢：<span ng-bind="age_conf"> </span></p>
           <p>住所：<span ng-bind="address_conf"> </span></p>
@@ -199,7 +199,9 @@
         </div>
         <div class="apply complete">
             <p ng-show="show_progress"><img src="/public/images/loading.gif"></p>
-            <p ng-show="show_comp">{{result}}</p>
+            <div ng-show="show_comp_success"><p>お問い合わせを受付致しました。</p><p>ご返信まで少々お時間がかかる場合がございますので、予めご了承ください。</p><p>また、「@fameal.com」からのメールを受信できるよう事前のご設定をお願いいたします。</p>
+            </div>
+            <p ng-show="show_comp_failure">送信エラーです。お手数ですが通信環境の良い場所で再度送信してください。</p>
         </div>
     </div>
 </div>

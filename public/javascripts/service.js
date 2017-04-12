@@ -92,11 +92,11 @@ angular.module('myApp')
                 }).
                 then(function successCallback(response) {
                     $scope.show_progress = false;
-                    $scope.result = "送信されました。担当者からご連絡致します。";
+                    $scope.show_comp_success=true;
                 }, function errorCallback(response) {
                     //通信に失敗
                     $scope.show_progress = false;
-                    $scope.result = '送信エラーが発生しました。';
+                    $scope.show_comp_failure=true;
                 });
             }
             this.compQuestion = function($scope){
@@ -114,11 +114,11 @@ angular.module('myApp')
                 }).
                 then(function successCallback(response) {
                     $scope.show_progress = false;
-                    $scope.result = "送信されました。担当者からご連絡致します。";
+                    $scope.show_comp_success=true;
                 }, function errorCallback(response) {
                     //通信に失敗
                     $scope.show_progress = false;
-                    $scope.result = '送信エラーが発生しました。';
+                    $scope.show_comp_failure=true;
                 });
             }
         }
