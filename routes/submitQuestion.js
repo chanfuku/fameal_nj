@@ -2,6 +2,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 const router = express.Router();
+const ua = require('universal-analytics');
 
 let transporter = nodemailer.createTransport( smtpTransport({
     host : process.env.EMAIL_HOST,
@@ -11,6 +12,8 @@ let transporter = nodemailer.createTransport( smtpTransport({
         pass : process.env.EMAIL_PASS // メールアドレスパスワード
     }
 }));
+
+let visitor = ua('UA-97242923-1');
 
 // お問い合わせメール送信
 router.post('/', function (req, res) {
@@ -39,6 +42,9 @@ router.post('/', function (req, res) {
             res.status(200).end();
         }
     });
+
+    // GA実行
+    visitor.event("お問い合わせ", "お問い合わせ").send();
 });
 
 module.exports = router;
