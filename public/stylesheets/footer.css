@@ -45,6 +45,7 @@
     text-decoration: none;
 }
 .footer-nav-link {
+    cursor: pointer;
     font-size: 0.8em;
     line-height: 1.208333333333333;
     display: block;
