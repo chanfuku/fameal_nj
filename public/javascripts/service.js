@@ -4,12 +4,12 @@ angular.module('myApp')
         function($log, $http) {
             this.change = function($scope){
                 $scope.error_messages = "";
-                if($scope.entryType == 1) {
-                    $scope.show_input=false;
-                    $scope.show_input_question=true;
-                } else {
+                if($scope.entry.type == "apply") {
                     $scope.show_input=true;
                     $scope.show_input_question=false;
+                } else {
+                    $scope.show_input=false;
+                    $scope.show_input_question=true;
                 }
             }
             this.conf = function($scope){
