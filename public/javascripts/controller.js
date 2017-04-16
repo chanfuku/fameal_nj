@@ -1,7 +1,7 @@
 var app = angular.module('myApp')
 app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserRegisterService',
     function($scope, $location, $anchorScroll, UserRegisterService) {
-        $scope.entryType="0";
+        $scope.entry = { type: 'apply' };
         $scope.show_entry_type=true;
         $scope.show_input=true;
         $scope.show_input_question=false;
@@ -28,6 +28,13 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
         }
         $scope.jumpTo = function(id) {
             $location.hash(id);
+            $anchorScroll();
+            $location.url($location.path());
+        }
+        $scope.jumpToEntry = function(type) {
+            $scope.entry = { type: type };
+            UserRegisterService.change($scope);
+            $location.hash('apply');
             $anchorScroll();
             $location.url($location.path());
         }

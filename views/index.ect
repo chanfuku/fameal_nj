@@ -33,10 +33,10 @@
 	        <li><a ng-click="jumpTo('about')">食卓を共にについて</a></li>
 	        <li><a ng-click="jumpTo('usage')">ご利用方法</a></li>
 	        <li><a ng-click="jumpTo('price')">料金</a></li>
-	        <li><a ng-click="jumpTo('apply')">お申し込み</a></li>
+	        <li><a ng-click="jumpToEntry('apply')">お申し込み</a></li>
 	        <li><a ng-click="jumpTo('thoughts')">サービス理念</a></li>
 	        <li><a ng-click="jumpTo('policy')">利用規約</a></li>
-	        <li><a ng-click="jumpTo('apply')">お問い合わせ</a></li>
+	        <li><a ng-click="jumpToEntry('question')">お問い合わせ</a></li>
 	    </ul>
     </nav>
 </div>
@@ -81,11 +81,11 @@
     <fieldset>
         <div class="tabmenu" ng-show="show_entry_type">
             <label>
-                <input name="tab" type="radio" checked value="0" ng-model="entryType" ng-change="changeEntryType()">
+                <input name="tab" value="apply" type="radio" ng-model="entry.type" ng-change="changeEntryType()">
                 <em>お申し込み</em>
             </label>
             <label>
-                <input name="tab" type="radio" value="1" ng-model="entryType" ng-change="changeEntryType()">
+                <input name="tab" value="question" type="radio" ng-model="entry.type" ng-change="changeEntryType()">
                 <em>お問い合わせ</em>
             </label>
         </div>
@@ -347,7 +347,7 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 				<a class="footer-nav-link" ng-click="jumpTo('price')">料金</a>
 			</li>
 			<li class="footer-nav-item">
-				<a class="footer-nav-link" ng-click="jumpTo('apply')">お申し込み</a>
+				<a class="footer-nav-link" ng-click="jumpToEntry('apply')">お申し込み</a>
 			</li>
 			<li class="footer-nav-item">
 				<a class="footer-nav-link" ng-click="jumpTo('thoughts')">サービス理念</a>
@@ -356,7 +356,7 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 				<a class="footer-nav-link" ng-click="jumpTo('policy')">利用規約</a>
 			</li>
 			<li class="footer-nav-item">
-				<a class="footer-nav-link" ng-click="jumpTo('apply')">お問い合わせ</a>
+				<a class="footer-nav-link" ng-click="jumpToEntry('question')">お問い合わせ</a>
 			</li>
 		</ul>
 
@@ -381,10 +381,10 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 	    <li><a ng-click="jumpTo('about')">食卓を共にについて</a></li>
 	    <li><a ng-click="jumpTo('usage')">ご利用方法</a></li>
 	    <li><a ng-click="jumpTo('price')">料金</a></li>
-	    <li><a ng-click="jumpTo('apply')">お申し込み</a></li>
+	    <li><a ng-click="jumpToEntry('apply')">お申し込み</a></li>
 	    <li><a ng-click="jumpTo('thoughts')">サービス理念</a></li>
 	    <li><a ng-click="jumpTo('policy')">利用規約</a></li>
-	    <li><a ng-click="jumpTo('apply')">お問い合わせ</a></li>
+	    <li><a ng-click="jumpToEntry('question')">お問い合わせ</a></li>
     </ul>
     </div>
 </nav>
