@@ -47,9 +47,11 @@ body	{margin: 0;
     padding-top: calc(1063 / 1200 * 100%);
     background-size: contain;
     background-image: url("../images/img_2_pc.jpg");}
-.box6 {padding-top: calc(1114 / 1290 * 100%);
+.box6 {
+    padding-top: calc(1114 / 1290 * 100%);
     background-size: contain;
-    background-image: url("../images/img_3_pc.jpg");}
+    background-image: url("../images/img_3_pc.jpg");
+    }
 .box7 {padding-top: calc(835 / 1200 * 100%);
     background-size: contain;
     background-image: url("../images/img_4_pc.jpg");}
