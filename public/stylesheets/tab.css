@@ -1,19 +1,7 @@
 .tabmenu{
+padding: 0 10px;
 position: relative;
 font-size: 0;
-}
-.tabmenu span{
-position: absolute;
-top: 30px;
-left: 0;
-display: block;
-margin: 4px 0 0;
-padding: 10px;
-width: 100%;
-border: 1px solid #0ae;
--webkit-border-radius: 0 6px 6px 6px;
-border-radius: 0 6px 6px 6px;
-font-size: 14px;
 }
 .tabmenu input[type="radio"]{
 display: none;
@@ -23,7 +11,7 @@ position: relative;
 display: inline-block;
 margin: 0 4px 0 0;
 padding: 4px 0 0;
-min-width: 144px;
+min-width: 151px;
 -webkit-border-radius: 6px 6px 0 0;
 border-radius: 6px 6px 0 0;
 background: #ddd;

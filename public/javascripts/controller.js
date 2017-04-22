@@ -7,6 +7,8 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
         $scope.show_input_question=false;
         $scope.changeEntryType = function() {
             UserRegisterService.change($scope);
+            $scope.show_comp_success=false;
+            $scope.show_comp_failure=false;
         }
         $scope.conf = function() {
             UserRegisterService.conf($scope);
@@ -23,7 +25,6 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             $anchorScroll();
             $location.url($location.path());
             $scope.show_conf=false;
-            $scope.show_comp=true;
             $scope.show_entry_type=true;
         }
         $scope.jumpTo = function(id) {
@@ -53,7 +54,6 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             $anchorScroll();
             $location.url($location.path());
             $scope.show_conf_question=false;
-            $scope.show_comp=true;
             $scope.show_entry_type=true;
         }
     }

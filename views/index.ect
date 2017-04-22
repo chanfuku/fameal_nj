@@ -157,9 +157,9 @@
           <fieldset>
             <div class="fieldName required">お問い合わせ内容</div>
             <select type="date" ng-model="questionType">
-                <option value="0">サービスについて</option>
-                <option value="1">料金・支払いについて</option>
-                <option value="2">その他</option>
+                <option value="サービスについて">サービスについて</option>
+                <option value="料金・支払いについて">料金・支払いについて</option>
+                <option value="その他">その他</option>
             </select>
           </fieldset>
           <fieldset>
@@ -186,18 +186,22 @@
           </fieldset>
         </form>
         <div class="apply confirm" ng-show="show_conf_question">
-          <h4>下記の内容を送信します。</h4>
+          <h4>ご入力頂いた下記の内容に誤りがないか<br>ご確認の上、送信してください。</h4>
+          <div class="confArea">
+          <p>お問い合わせ内容：<span ng-bind="questionType_conf"> </span></p>
           <p>お名前：<span ng-bind="name_conf"> </span></p>
           <p>電話番号：<span ng-bind="tel_conf"> </span></p>
           <p>メールアドレス：<span ng-bind="email_conf"></span></p>
-          <p>内容詳細：<span ng-bind="detail_conf"></span></p>
+          <p>内容詳細：</p><p><span ng-bind="detail_conf"></span></p>
+          </div>
           <fieldset>
               <button ng-click="backQuestion()" type="back">戻る</button>
               <button ng-click="compQuestion()" type="submit">送信</button>
           </fieldset>
         </div>
         <div class="apply confirm" ng-show="show_conf">
-          <h4>下記の内容を送信します。</h4>
+          <h4>ご入力頂いた下記の内容に誤りがないか<br>ご確認の上、送信してください。</h4>
+          <div class="confArea">
           <p>お名前：<span ng-bind="name_conf"> </span></p>
           <p>年齢：<span ng-bind="age_conf"> </span></p>
           <p>住所：<span ng-bind="address_conf"> </span></p>
@@ -206,6 +210,7 @@
           <p>希望日時：<span ng-bind="date_conf"> </span></p>
           <p>時間：<span ng-bind="time_conf"> </span></p>
           <p>参加予定人数：<span ng-bind="attendNum_conf"></span></p>
+          </div>
           <fieldset>
               <button ng-click="back()" type="back">戻る</button>
               <button ng-click="comp()" type="submit">送信</button>
@@ -213,7 +218,9 @@
         </div>
         <div class="apply complete">
             <p ng-show="show_progress"><img src="/public/images/loading.gif"></p>
-            <p ng-show="show_comp">{{result}}</p>
+            <div ng-show="show_comp_success"><p>お問い合わせを受付致しました。</p><p>ご返信まで少々お時間がかかる場合がございますので、予めご了承ください。</p><p>また、「@fameal.com」からのメールを受信できるよう事前のご設定をお願いいたします。</p>
+            </div>
+            <p ng-show="show_comp_failure">送信エラーです。お手数ですが通信環境の良い場所で再度送信してください。</p>
         </div>
     </div>
 </div>
