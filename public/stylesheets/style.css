@@ -92,6 +92,8 @@ ul.error {color: red;
 
 /* ########### 1007px以下 ########### */
 @media (max-width: 1007px) {
+#about, #usage, #price, #apply, #thoughts, #policy {margin-top: -60px;
+    padding-top: 60px;}
 
 .boxA, .menu {display: none;}
 header {position: fixed;
@@ -108,7 +110,7 @@ header {position: fixed;
     line-height: 1.8;
     margin-bottom: 5%;}
 .box4 {background-image: url("../images/img_1_sp.jpg");
-    margin-top: 10%;}
+    margin-top: 3%;}
 .box4 p {font-size: 80%;}
 .box4 .catch {font-size: 120%;
     line-height:3px;
