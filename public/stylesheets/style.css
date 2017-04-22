@@ -96,6 +96,7 @@ ul.error {color: red;
 .boxA, .menu {display: none;}
 header {position: fixed;
     background-color:#fff;
+    opacity: 0.9;
     z-index: 999;
     top: 0px;
     left: 0px;
