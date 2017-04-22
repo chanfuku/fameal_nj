@@ -9,6 +9,8 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             UserRegisterService.change($scope);
             $scope.show_comp_success=false;
             $scope.show_comp_failure=false;
+            $scope.show_conf=false;
+            $scope.show_conf_question=false;
         }
         $scope.conf = function() {
             UserRegisterService.conf($scope);
@@ -35,6 +37,8 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
         $scope.jumpToEntry = function(type) {
             $scope.entry = { type: type };
             UserRegisterService.change($scope);
+            $scope.show_conf=false;
+            $scope.show_conf_question=false;
             $location.hash('apply');
             $anchorScroll();
             $location.url($location.path());

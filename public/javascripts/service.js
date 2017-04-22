@@ -35,7 +35,6 @@ angular.module('myApp')
                     $scope.attendNum_conf = $scope.attendNum;
                     $scope.show_conf=true;
                     $scope.show_input=false;
-                    $scope.show_entry_type=false;
                 } else {
                     $scope.error_messages = error;
                 }
@@ -56,7 +55,6 @@ angular.module('myApp')
                     $scope.detail_conf = $scope.detail;
                     $scope.show_conf_question=true;
                     $scope.show_input_question=false;
-                    $scope.show_entry_type=false;
                 } else {
                     $scope.error_messages = error;
                 }
