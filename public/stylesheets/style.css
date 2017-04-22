@@ -106,7 +106,8 @@ header {position: fixed;
 .box3 p {font-size: 150%;
     line-height: 1.8;
     margin-bottom: 5%;}
-.box4 {background-image: url("../images/img_1_sp.jpg");}
+.box4 {background-image: url("../images/img_1_sp.jpg");
+    margin-top: 10%;}
 .box4 p {font-size: 80%;}
 .box4 .catch {font-size: 120%;
     line-height:3px;
@@ -181,8 +182,9 @@ header {position: fixed;
     line-height: 1.8;
     margin-bottom: 5%;}
 
-.box4 p {font-size: 120%;}
-.contents {top: 5%;}
+.box4 p {font-size: 140%;}
+.catch {top: 5%;}
+.contents {top: 15%;}
 
 .box7-inner li {font-size: 150%}
 .box7-inner ol {padding-top: 10%}
