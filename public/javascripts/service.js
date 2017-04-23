@@ -74,7 +74,6 @@ angular.module('myApp')
             }
 
             this.comp = function($scope){
-                $scope.show_progress = true;
                 $result = $http({
                     method: 'POST',
                     url: '/submit',
@@ -90,16 +89,13 @@ angular.module('myApp')
                     }
                 }).
                 then(function successCallback(response) {
-                    $scope.show_progress = false;
                     $scope.show_comp_success=true;
                 }, function errorCallback(response) {
                     //通信に失敗
-                    $scope.show_progress = false;
                     $scope.show_comp_failure=true;
                 });
             }
             this.compQuestion = function($scope){
-                $scope.show_progress = true;
                 $result = $http({
                     method: 'POST',
                     url: '/submitQuestion',
@@ -112,11 +108,9 @@ angular.module('myApp')
                     }
                 }).
                 then(function successCallback(response) {
-                    $scope.show_progress = false;
                     $scope.show_comp_success=true;
                 }, function errorCallback(response) {
                     //通信に失敗
-                    $scope.show_progress = false;
                     $scope.show_comp_failure=true;
                 });
             }
