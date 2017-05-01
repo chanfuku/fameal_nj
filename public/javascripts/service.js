@@ -89,10 +89,14 @@ angular.module('myApp')
                     }
                 }).
                 then(function successCallback(response) {
+                    $scope.show_conf=false;
                     $scope.show_comp_success=true;
+                    $scope.button_disabled = false;
                 }, function errorCallback(response) {
                     //通信に失敗
+                    $scope.show_conf=false;
                     $scope.show_comp_failure=true;
+                    $scope.button_disabled = false;
                 });
             }
             this.compQuestion = function($scope){
@@ -108,10 +112,14 @@ angular.module('myApp')
                     }
                 }).
                 then(function successCallback(response) {
+                    $scope.show_conf_question=false;
                     $scope.show_comp_success=true;
+                    $scope.button_disabled = false;
                 }, function errorCallback(response) {
                     //通信に失敗
+                    $scope.show_conf_question=false;
                     $scope.show_comp_failure=true;
+                    $scope.button_disabled = false;
                 });
             }
         }

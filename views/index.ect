@@ -204,7 +204,7 @@
           </div>
           <fieldset>
               <button ng-click="backQuestion()" type="back">戻る</button>
-              <button ng-click="compQuestion()" type="submit">送信</button>
+              <button ng-click="compQuestion()" ng-disabled="button_disabled" type="submit">送信</button>
           </fieldset>
         </div>
         <div class="apply confirm" ng-show="show_conf">
@@ -221,7 +221,7 @@
           </div>
           <fieldset>
               <button ng-click="back()" type="back">戻る</button>
-              <button ng-click="comp()" type="submit">送信</button>
+              <button ng-click="comp()" ng-disabled="button_disabled" type="submit">送信</button>
           </fieldset>
         </div>
         <div class="apply complete">
