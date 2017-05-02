@@ -204,7 +204,7 @@
           </div>
           <fieldset>
               <button ng-click="backQuestion()" type="back">戻る</button>
-              <button ng-click="compQuestion()" type="submit">送信</button>
+              <button ng-click="compQuestion()" ng-disabled="button_disabled" type="submit">送信</button>
           </fieldset>
         </div>
         <div class="apply confirm" ng-show="show_conf">
@@ -221,11 +221,10 @@
           </div>
           <fieldset>
               <button ng-click="back()" type="back">戻る</button>
-              <button ng-click="comp()" type="submit">送信</button>
+              <button ng-click="comp()" ng-disabled="button_disabled" type="submit">送信</button>
           </fieldset>
         </div>
         <div class="apply complete">
-            <p ng-show="show_progress"><img src="/public/images/loading.gif"></p>
             <div ng-show="show_comp_success"><p>お問い合わせを受付致しました。</p><p>ご返信まで少々お時間がかかる場合がございますので、予めご了承ください。</p><p>また、「@fameal.com」からのメールを受信できるよう事前のご設定をお願いいたします。</p>
             </div>
             <p ng-show="show_comp_failure">送信エラーです。お手数ですが通信環境の良い場所で再度送信してください。</p>

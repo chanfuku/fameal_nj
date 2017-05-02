@@ -5,6 +5,7 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
         $scope.show_entry_type=true;
         $scope.show_input=true;
         $scope.show_input_question=false;
+        $scope.button_disabled = false;
         $scope.changeEntryType = function() {
             UserRegisterService.change($scope);
             $scope.show_comp_success=false;
@@ -22,11 +23,11 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             UserRegisterService.back($scope);
         }
         $scope.comp = function() {
+            $scope.button_disabled = true;
             UserRegisterService.comp($scope);
             $location.hash('apply');
             $anchorScroll();
             $location.url($location.path());
-            $scope.show_conf=false;
             $scope.show_entry_type=true;
         }
         $scope.jumpTo = function(id) {
@@ -53,11 +54,11 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             UserRegisterService.backQuestion($scope);
         }
         $scope.compQuestion = function() {
+            $scope.button_disabled = true;
             UserRegisterService.compQuestion($scope);
             $location.hash('apply');
             $anchorScroll();
             $location.url($location.path());
-            $scope.show_conf_question=false;
             $scope.show_entry_type=true;
         }
     }
