@@ -53,6 +53,10 @@
     line-height: 1.263157894736842;
     color: #1e1e1e;
 }
+.footer-social {
+    padding: 15px 0 15px 0;
+    text-align: center;
+}
 
 /* ########### 1007px以下 ########### */
 @media (max-width: 1007px) {
