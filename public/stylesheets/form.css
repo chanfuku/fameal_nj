@@ -6,9 +6,9 @@
 	background:#F9F9F9;
 }
 
-.apply input[type="text"], .apply input[type="email"], .apply input[type="tel"], .apply input[type="number"], .apply textarea { font:400 16px "Open Sans", Helvetica, Arial, sans-serif; }
+.apply input[type="text"], .apply input[type="email"], .apply input[type="tel"], .apply input[type="number"], .apply textarea { font-size: 16px; }
 
-select[type="date"], option[type="date"] {font:400 16px "Open Sans", Helvetica, Arial, sans-serif;}
+select[type="date"], option[type="date"] {font-size: 16px;}
 
 .apply {
 	background:#F9F9F9;
