@@ -14,7 +14,7 @@ for (var i = 1; i < 90; i++) {
     }
 }
 var businessHours = [];
-for (var i = 1; i < 25; i++) {
+for (var i = 10; i < 21; i++) {
     businessHours.push(i + '時~');
 }
 
