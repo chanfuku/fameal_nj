@@ -107,10 +107,9 @@ header {position: fixed;
     height: 60px;
 }
 .wrapper {margin-top: 80px;}
-.box3 p.large {font-size: 150%;
+.box3 p {font-size: 150%;
     line-height: 1.8;
     margin-bottom: 5%;}
-.box3 p.small {font-size: 100%;}
 .box4 {background-image: url("../images/img_1_sp.jpg");
     margin-top: 3%;}
 .box4 p {font-size: 80%;}
