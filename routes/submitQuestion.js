@@ -2,6 +2,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 const router = express.Router();
+const os = require("os");
 const ua = require('universal-analytics');
 
 let transporter = nodemailer.createTransport( smtpTransport({
@@ -18,13 +19,39 @@ let visitor = ua('UA-97242923-1');
 // お問い合わせメール送信
 router.post('/', function (req, res) {
     // Message object
+    // 改行コード取得
+    var eol = os.EOL;
     var mes = req.body
     let message = {
         from: 'fameal <' + process.env.EMAIL_USER + '>',
         to: mes.email,
         bcc: process.env.EMAIL_USER,
-        subject: '[fameal]お問い合わせ受付完了',
-        text: mes.name + '様のお問い合わせ内容は' + mes.detail + 'です。'
+        subject: '［FAMEAL］お問い合わせの受付',
+        text:
+            `${mes.name}様` + eol +
+            `この度は、FAMEALにお問い合わせいただき、` + eol +
+            `誠にありがとうございます。` + eol +
+            `ご入力いただきました内容は以下のとおりです。` + eol +
+            `-------------------------` + eol +
+            `■お問い合わせ内容` + eol +
+            `${mes.questionType}` + eol +
+            `■お名前` + eol +
+            `${mes.name}` + eol +
+            `■メールアドレス` + eol +
+            `${mes.email}` + eol +
+            `■電話番号` + eol +
+            `${mes.tel}` + eol +
+            `■内容詳細` + eol +
+            `${mes.detail}` + eol + eol +
+            `-------------------------` + eol + eol +
+            `追ってご連絡を差し上げますので、` + eol +
+            `少々おまちください。` + eol +
+            `ご連絡には多少お日にちをいただく事がございます。` + eol +
+            `予めご了承お願いいたします。` + eol + eol +
+            `※このメールに心あたりが無い場合は、` + eol +
+            `誠に恐れ入りますが、破棄していただけますようお願いいたします。` + eol + eol +
+            `-----------------` + eol +
+            `運営：simdy`
     };
 
     res.contentType('application/json');
