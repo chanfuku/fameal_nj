@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body	{margin: 0;
-    font-family: 'Sawarabi Gothic';}
+    font-family: 'Open Sans', sans-serif;}
 
 /* サイト名 */
 .site h1 a	{color: #000000;
