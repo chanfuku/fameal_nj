@@ -22,13 +22,17 @@ router.post('/', function (req, res) {
     // 改行コード取得
     var eol = os.EOL;
     var mes = req.body
+    var tel = '';
+    if (mes.tel != null) {
+        tel = `■電話番号` + eol + `${mes.tel}` + eol;
+    }
     let message = {
         from: 'fameal <' + process.env.EMAIL_USER + '>',
         to: mes.email,
         bcc: process.env.EMAIL_USER,
         subject: '［FAMEAL］お問い合わせの受付',
         text:
-            `${mes.name}様` + eol +
+            `${mes.name}様` + eol + eol +
             `この度は、FAMEALにお問い合わせいただき、` + eol +
             `誠にありがとうございます。` + eol +
             `ご入力いただきました内容は以下のとおりです。` + eol +
@@ -38,9 +42,7 @@ router.post('/', function (req, res) {
             `■お名前` + eol +
             `${mes.name}` + eol +
             `■メールアドレス` + eol +
-            `${mes.email}` + eol +
-            `■電話番号` + eol +
-            `${mes.tel}` + eol +
+            `${mes.email}` + eol + tel +
             `■内容詳細` + eol +
             `${mes.detail}` + eol + eol +
             `-------------------------` + eol + eol +
