@@ -74,3 +74,24 @@ function check_privacy(data, error) {
     }
     return error;
 }
+
+function clear_apply($scope) {
+    $scope.name = '';
+    $scope.age = '';
+    $scope.address = '';
+    $scope.tel = '';
+    $scope.email = '';
+    $scope.date = '';
+    $scope.time = '';
+    $scope.attendNum = '';
+    $scope.privacy = '';
+}
+
+function clear_question($scope) {
+    $scope.questionType = '';
+    $scope.name = '';
+    $scope.tel = '';
+    $scope.email = '';
+    $scope.detail = '';
+    $scope.privacy = '';
+}

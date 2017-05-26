@@ -89,11 +89,13 @@ angular.module('myApp')
                     }
                 }).
                 then(function successCallback(response) {
+                    clear_apply($scope);
                     $scope.show_conf=false;
                     $scope.show_comp_success=true;
                     $scope.button_disabled = false;
                 }, function errorCallback(response) {
                     //通信に失敗
+                    clear_apply($scope);
                     $scope.show_conf=false;
                     $scope.show_comp_failure=true;
                     $scope.button_disabled = false;
@@ -112,11 +114,13 @@ angular.module('myApp')
                     }
                 }).
                 then(function successCallback(response) {
+                    clear_question($scope);
                     $scope.show_conf_question=false;
                     $scope.show_comp_success=true;
                     $scope.button_disabled = false;
                 }, function errorCallback(response) {
                     //通信に失敗
+                    clear_question($scope);
                     $scope.show_conf_question=false;
                     $scope.show_comp_failure=true;
                     $scope.button_disabled = false;
