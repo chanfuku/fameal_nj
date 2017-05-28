@@ -4,6 +4,8 @@ const smtpTransport = require('nodemailer-smtp-transport');
 const router = express.Router();
 const os = require("os");
 const ua = require('universal-analytics');
+const firebase = require("firebase");
+const moment = require("moment");
 
 let transporter = nodemailer.createTransport( smtpTransport({
     host : process.env.EMAIL_HOST,
@@ -55,6 +57,8 @@ router.post('/', function (req, res) {
             `-----------------` + eol +
             `運営：simdy`
     };
+    // firebaseに保存
+    send_question_firebase(mes);
 
     res.contentType('application/json');
     transporter.sendMail(message, (error, info) => {
@@ -75,5 +79,16 @@ router.post('/', function (req, res) {
     // GA実行
     visitor.event("お問い合わせ", "お問い合わせ").send();
 });
+
+function send_question_firebase (mes) {
+    var database = firebase.database();
+    database.ref('questions/' + mes.name).push({
+      questionType: mes.questionType,
+      username: mes.name,
+      email: mes.email,
+      detail: mes.detail,
+      created_at: moment().format('YYYYMMMMDo,h:mm:ss a')
+    });
+}
 
 module.exports = router;

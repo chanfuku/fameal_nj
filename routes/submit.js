@@ -4,6 +4,8 @@ const smtpTransport = require('nodemailer-smtp-transport');
 const router = express.Router();
 const os = require("os");
 const ua = require('universal-analytics');
+const firebase = require("firebase");
+const moment = require("moment");
 
 let transporter = nodemailer.createTransport( smtpTransport({
     host : process.env.EMAIL_HOST,
@@ -44,6 +46,8 @@ router.post('/', function (req, res) {
             `お心当たりがない場合は、誠に恐れ入りますがメールを破棄して頂きますようお願い致します。`
     };
 
+    // firebaseに保存
+    send_apply_firebase(mes);
     res.contentType('application/json');
     transporter.sendMail(message, (error, info) => {
         // ToDo: エラーハンドリング
@@ -63,5 +67,19 @@ router.post('/', function (req, res) {
     // GA実行
     visitor.event("申し込み", "申し込み").send();
 });
+
+function send_apply_firebase (mes) {
+    var database = firebase.database();
+    database.ref('applies/' + mes.name).push({
+      username: mes.name,
+      age: mes.age,
+      address: mes.address,
+      tel: mes.tel,
+      email: mes.email,
+      date: mes.date,
+      time: mes.time,
+      created_at: moment().format('YYYYMMMMDo,h:mm:ss a')
+    });
+}
 
 module.exports = router;
