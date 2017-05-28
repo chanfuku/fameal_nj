@@ -32,7 +32,7 @@
     shell: cd {{ dest_dir }} && npm install
   - name: set env file
     copy:
-        src: ./.env
+        src: ../.env
         dest: "{{ dest_dir }}"
   - name: boot fameal app
     shell: cd {{ dest_dir }} && npm run build && npm run start-prod
