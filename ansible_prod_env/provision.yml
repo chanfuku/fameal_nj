@@ -35,7 +35,7 @@
         src: ../.env
         dest: "{{ dest_dir }}"
   - name: boot fameal app
-    shell: cd {{ dest_dir }} && npm run build && npm run start-prod
+    shell: cd {{ dest_dir }} && npm run build && bash start_fameal.sh
   - name: copy nginx.conf
     copy:
         src: nginx.conf
