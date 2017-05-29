@@ -6,6 +6,8 @@
   "scripts": {
     "start": "nodemon -L -e js,ect",
     "start-prod": "forever start index.js",
+    "restart-prod": "forever restart index.js",
+    "stop-prod": "forever stop index.js",
     "build": "cd gulp_build_task && gulp"
   },
   "keywords": [],
