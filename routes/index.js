@@ -31,5 +31,8 @@ firebase.initializeApp({
 router.get('/', function (req, res) {
     res.render('index', { dates: businessDays, times: businessHours });
 });
+router.get('/transactionLaw', function (req, res) {
+    res.render('transactionLaw');
+});
 
 module.exports = router;

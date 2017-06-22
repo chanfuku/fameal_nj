@@ -20,7 +20,7 @@
     <div class="boxA-inner">
         <div class="box1">
         	<div class="site">
-        	<h1><img src="/public/images/siteID.png" alt="" width="200px"></h1>
+                <h1><a href="/"><img src="/public/images/siteID.png" alt="" width="200px"></a></h1>
         	</div>
         </div>
 
@@ -395,10 +395,16 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 				<a class="footer-nav-link" ng-click="jumpTo('thoughts')">サービス理念</a>
 			</li>
 			<li class="footer-nav-item">
+				<a class="footer-nav-link" ng-click="jumpToEntry('question')">お問い合わせ</a>
+			</li>
+			<li class="footer-nav-item">
 				<a class="footer-nav-link" ng-click="jumpTo('policy')">利用規約</a>
 			</li>
 			<li class="footer-nav-item">
-				<a class="footer-nav-link" ng-click="jumpToEntry('question')">お問い合わせ</a>
+				<a class="footer-nav-link" ng-click="linkTo('transactionLaw')">特定商取引法に基づく表示</a>
+			</li>
+			<li class="footer-nav-item">
+				<a class="footer-nav-link" ng-click="linkTo('privacy')">プライバシーポリシー</a>
 			</li>
 		</ul>
 		<div class="footer-copyright">
@@ -409,9 +415,6 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 	</div>
 </footer>
 
-
-
-
 <!-- モーダルメニュー -->
 <nav class="modalmenu" id="js__nav">
     <div class="modal-inner">
@@ -421,8 +424,8 @@ famealに関連して訴訟等の必要が生じた場合には、東京地方�
 	    <li><a ng-click="jumpTo('price')">料金</a></li>
 	    <li><a ng-click="jumpToEntry('apply')">お申し込み</a></li>
 	    <li><a ng-click="jumpTo('thoughts')">サービス理念</a></li>
-	    <li><a ng-click="jumpTo('policy')">利用規約</a></li>
 	    <li><a ng-click="jumpToEntry('question')">お問い合わせ</a></li>
+	    <li><a ng-click="jumpTo('policy')">利用規約</a></li>
     </ul>
     </div>
 </nav>
