@@ -34,5 +34,8 @@ router.get('/', function (req, res) {
 router.get('/transactionLaw', function (req, res) {
     res.render('transactionLaw');
 });
+router.get('/policy', function (req, res) {
+    res.render('policy');
+});
 
 module.exports = router;
