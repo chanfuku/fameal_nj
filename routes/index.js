@@ -2,6 +2,7 @@ const express = require('express');
 const moment = require("moment");
 const router = express.Router();
 const firebase = require("firebase");
+let status = process.env.SITE_STATUS
 
 // 営業日取得
 moment.locale('ja', {weekdays: ["日","月","火","水","木","金","土"]});
@@ -29,7 +30,12 @@ firebase.initializeApp({
 
 // デフォルトルーティング
 router.get('/', function (req, res) {
-    res.render('index', { dates: businessDays, times: businessHours });
+    console.log(status);
+    if (status == "working") {
+        res.render('index', { dates: businessDays, times: businessHours });
+    } else {
+        res.send('準備中です');
+    }
 });
 router.get('/transactionLaw', function (req, res) {
     res.render('transactionLaw');
