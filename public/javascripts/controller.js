@@ -44,6 +44,9 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             $anchorScroll();
             $location.url($location.path());
         }
+        $scope.linkTo = function($id) {
+            location.pathname = $id;
+        }
         $scope.confQuestion = function() {
             UserRegisterService.confQuestion($scope);
             $location.hash('apply');
