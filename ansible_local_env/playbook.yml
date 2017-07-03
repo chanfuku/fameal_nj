@@ -1,15 +1,41 @@
 - hosts: targets
   connection: local
   user: vagrant
-  become: yes
+  become: true
+  vars:
+    dest_dir: /vagrant
   tasks:
-    - name: yum_install_packages
-      yum: name={{ item }} state=present
-      with_items:
-      - epel-release
-      - nodejs
-      - npm
-    - name: install modules
-      command: cd /vagrant/ && npm install
-    - name: boot fameal app
-      command: sudo -u vagrant npm start
+  - name: Check Node.js repository version
+    shell: yum info nodejs | grep -e "Version\s*:\s*[6-9].*$"
+    register: nodejs_repository_version
+    check_mode: no
+    changed_when: false
+    failed_when: false
+  - name: Register Node.js repository
+    shell: curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+    when: nodejs_repository_version.stdout == ""
+  - name: Install Node.js, git, nginx
+    yum: name={{ item }} state=present
+    with_items:
+    - nodejs
+    - http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+    - nginx
+  - name: install modules
+    shell: cd {{ dest_dir }} && npm install
+  - name: set env file
+    copy:
+        src: ../.env
+        dest: "{{ dest_dir }}"
+  - name: boot fameal app
+    shell: cd {{ dest_dir }} && npm start
+  - name: copy nginx.conf
+    copy:
+        src: nginx.conf
+        dest: /etc/nginx/nginx.conf
+        owner: root
+        group: root
+        mode: 0644
+  - name: set autoload nginx
+    command: systemctl enable nginx
+  - name: restart nginx
+    command: systemctl restart nginx
