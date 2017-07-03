@@ -43,5 +43,8 @@ router.get('/transactionLaw', function (req, res) {
 router.get('/policy', function (req, res) {
     res.render('policy');
 });
+router.get('/privacy', function (req, res) {
+    res.render('privacy');
+});
 
 module.exports = router;
