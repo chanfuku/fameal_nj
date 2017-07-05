@@ -30,11 +30,10 @@ firebase.initializeApp({
 
 // デフォルトルーティング
 router.get('/', function (req, res) {
-    console.log(status);
-    if (status == "working") {
-        res.render('index', { dates: businessDays, times: businessHours });
-    } else {
+    if (status == "disabled") {
         res.send('準備中です');
+    } else {
+        res.render('index', { dates: businessDays, times: businessHours });
     }
 });
 router.get('/transactionLaw', function (req, res) {
