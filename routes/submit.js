@@ -23,7 +23,6 @@ router.post('/', function (req, res) {
     // 改行コード取得
     var eol = os.EOL;
     var mes = req.body
-    console.log(mes);
     let message = {
         from: 'fameal <' + process.env.EMAIL_USER + '>',
         to: mes.email,
@@ -57,7 +56,6 @@ router.post('/', function (req, res) {
             transporter.close();
             res.status(500).end();
         } else {
-            console.log(info);
             console.log('Message sent successfully!');
             transporter.close();
             res.status(200).end();

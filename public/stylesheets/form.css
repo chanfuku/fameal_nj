@@ -59,7 +59,10 @@ fieldset {
 
 .confArea {margin: auto;
     text-align: left;
-    max-width: 330px;}
+    max-width: 330px;
+    word-wrap: break-word;
+    white-space: pre-line;
+}
 
 .confirm p {
     font-size: 100%;
