@@ -17,6 +17,9 @@
     },
     "EMAIL_USER": {
       "required": true
+    },
+    "SITE_STATUS": {
+      "required": true
     }
   },
   "formation": {
