@@ -17,7 +17,6 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             UserRegisterService.conf($scope);
             $location.hash('apply');
             $anchorScroll();
-            $location.url($location.path());
         }
         $scope.back = function() {
             UserRegisterService.back($scope);
@@ -27,13 +26,11 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             UserRegisterService.comp($scope);
             $location.hash('apply');
             $anchorScroll();
-            $location.url($location.path());
             $scope.show_entry_type=true;
         }
         $scope.jumpTo = function(id) {
             $location.hash(id);
             $anchorScroll();
-            $location.url($location.path());
         }
         $scope.jumpToEntry = function(type) {
             $scope.entry = { type: type };
@@ -42,7 +39,6 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             $scope.show_conf_question=false;
             $location.hash('apply');
             $anchorScroll();
-            $location.url($location.path());
         }
         $scope.linkTo = function($id) {
             location.pathname = $id;
@@ -51,7 +47,6 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             UserRegisterService.confQuestion($scope);
             $location.hash('apply');
             $anchorScroll();
-            $location.url($location.path());
         }
         $scope.backQuestion = function() {
             UserRegisterService.backQuestion($scope);
@@ -61,7 +56,6 @@ app.controller('MyController', ['$scope', '$location', '$anchorScroll', 'UserReg
             UserRegisterService.compQuestion($scope);
             $location.hash('apply');
             $anchorScroll();
-            $location.url($location.path());
             $scope.show_entry_type=true;
         }
     }
