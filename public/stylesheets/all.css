@@ -122,6 +122,7 @@ header {position: fixed;
     background-image: url("../images/img_3_sp.jpg");}
 .contents {top: 7%;}
 .box7 {background-image: url("../images/img_4_sp.jpg");}
+.box7-inner li {font-size: 88%}
 .box8 {background-image: url("../images/img_5_sp.jpg");}
 .space-inner .line {
     width: .5rem;
