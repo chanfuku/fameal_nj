@@ -6,6 +6,7 @@ const os = require("os");
 const ua = require('universal-analytics');
 const firebase = require("firebase");
 const moment = require("moment");
+const IncomingWebhook = require('@slack/client').IncomingWebhook;
 
 let transporter = nodemailer.createTransport( smtpTransport({
     host : process.env.EMAIL_HOST,
@@ -17,6 +18,9 @@ let transporter = nodemailer.createTransport( smtpTransport({
 }));
 
 let visitor = ua('UA-97242923-1');
+
+let url = process.env.SLACK_WEBHOOK_URL || '';
+let webhook = new IncomingWebhook(url);
 
 // 申し込みメール送信
 router.post('/', function (req, res) {
@@ -57,6 +61,13 @@ router.post('/', function (req, res) {
             res.status(500).end();
         } else {
             console.log('Message sent successfully!');
+            webhook.send(mes.name + '様からの「申し込み」がありました。メールを確認してください。', function(err, header, statusCode, body) {
+                if (err) {
+                    console.log('Error:', err);
+                } else {
+                    console.log('Received', statusCode, 'from Slack');
+                }
+            });
             transporter.close();
             res.status(200).end();
         }
