@@ -20,6 +20,9 @@
     },
     "SITE_STATUS": {
       "required": true
+    },
+    "SLACK_WEBHOOK_URL": {
+      "required": true
     }
   },
   "formation": {

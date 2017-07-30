@@ -13,7 +13,7 @@ a { text-decoration: none;}
 .wrapper {max-width: 1200px;
     margin: 0 auto;}
 /* box */
-.box3, .box4, .space, .box_img, .box7, .box8   {text-align: center;
+.box3, .box4, .space, .box_img, .box7, .box8, .box9   {text-align: center;
     margin-left: auto;
     margin-right: auto;}
 .box4, .box7, .box8  {position: relative;}
@@ -124,6 +124,8 @@ header {position: fixed;
 .box7 {background-image: url("../images/img_4_sp.jpg");}
 .box7-inner li {font-size: 88%}
 .box8 {background-image: url("../images/img_5_sp.jpg");}
+.box9 p {font-size: 110%;
+    margin: 0 10%;}
 .space-inner .line {
     width: .5rem;
 	border-top: solid 1px black;
@@ -195,14 +197,15 @@ header {position: fixed;
 .box7-inner ol {padding-top: 10%}
 .box7-inner {top: 20%;
     bottom: 20%;}
-
+.box9 p {font-size: 180%;
+    margin: 0;}
 }
 
 /* ########### 1200px以上 ########### */
 @media (min-width: 1200px) {
 
 /* 全体の横幅を固定 */
-.boxA-inner, .box3, .box4, .box_img
+.boxA-inner, .box3, .box4, .box_img, .box9
     {text-align: center;
 	margin-left: auto;
 	margin-right: auto}
