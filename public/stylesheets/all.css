@@ -17,6 +17,7 @@ a { text-decoration: none;}
     margin-left: auto;
     margin-right: auto;}
 .box4, .box7, .box8  {position: relative;}
+.box9 {background-color: #fffbf7;}
 
 .space {height: 100px;
     display: table;}
@@ -125,7 +126,8 @@ header {position: fixed;
 .box7-inner li {font-size: 88%}
 .box8 {background-image: url("../images/img_5_sp.jpg");}
 .box9 p {font-size: 110%;
-    margin: 0 10%;}
+    padding: 3% 0;
+    margin: 0% 10%;}
 .space-inner .line {
     width: .5rem;
 	border-top: solid 1px black;
@@ -198,6 +200,7 @@ header {position: fixed;
 .box7-inner {top: 20%;
     bottom: 20%;}
 .box9 p {font-size: 180%;
+    padding: 3%;
     margin: 0;}
 }
 
