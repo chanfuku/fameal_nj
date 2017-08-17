@@ -2,6 +2,9 @@
     z-index: 1001;
     background: #F9F9F9;
     margin-top: 100px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
 }
 #footer .container {
     position: relative;
