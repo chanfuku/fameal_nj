@@ -23,7 +23,7 @@ a {
 
 .modal-inner {
     position: fixed;
-    top: 60px;
+    top: 40px;
     left: 0;
     display: table;
     width: 100%;
@@ -38,8 +38,8 @@ a {
 
 .modal-inner li {
     width: 200px;
-    height: 80px;
-    line-height: 80px;
+    height: 50px;
+    line-height: 0px;
     margin: 0 auto;
     text-align: center;
 }
