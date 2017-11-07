@@ -2,19 +2,32 @@ p.serviceFlow {
     text-align: center;
 	font-size: 30px}
 
-.box11 { max-width: 900px;
+.box11 {width: 90%;
     text-align: center;
 	margin-left: auto;
 	margin-right: auto}
 
 .serviceFlowText {
+    width: 900px;
     font-size: 20px;
-    text-align: center;
+    margin: 0 auto;
+    text-align: left;
     line-height: 1.1;
-    margin: 7px 30px 50px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+    margin-bottom: 50px;
+}
+.serviceFlowText p {
+    padding: 0 1%;
+    text-align: left;
+    line-height: 2.1;
 }
 
 .serviceFlowText b.main {
+    text-align: left;
+    padding: 0 1%;
     line-height: 3.0;
 }
 
@@ -36,15 +49,28 @@ p.serviceFlow {
 .buttonServiceFlow:hover { background-color:#f8f8f8; }
 
 @media (max-width: 1007px) {
-p.serviceFlow {
-	font-size: 120%}
-
-.box11 img {width: 90%;}
+p.serviceFlow {font-size: 120%;}
+.box11 img {width: 80%;}
 .box11 { width: 100%;
     text-align: center;
 	margin-left: auto;
-	margin-right: auto}
+	margin-right: auto
+}
+.serviceFlowText b.main {
+    padding: 0 1%;
+    font-size: 80%;
+    line-height: 1.0;
+}
 .serviceFlowText {
+    width: 80%;
+    line-height: 2.0;
+    text-align: left;
     font-size: 18px;
-    margin: 7px 10% 40px;}
+    margin: 7px 10% 40px;
+}
+.serviceFlowText p {
+    padding: 0 1%;
+    text-align: left;
+    line-height: 2.1;
+}
 }
