@@ -45,5 +45,8 @@ router.get('/policy', function (req, res) {
 router.get('/privacy', function (req, res) {
     res.render('privacy');
 });
+router.get('/serviceFlow', function (req, res) {
+    res.render('serviceFlow');
+});
 
 module.exports = router;
