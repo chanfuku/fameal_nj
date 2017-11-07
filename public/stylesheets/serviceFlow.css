@@ -11,7 +11,7 @@ p.serviceFlow {
     font-size: 20px;
     text-align: center;
     line-height: 1.1;
-    margin: 7px auto 50px;
+    margin: 7px 30px 50px;
 }
 
 .serviceFlowText b.main {
@@ -39,12 +39,12 @@ p.serviceFlow {
 p.serviceFlow {
 	font-size: 120%}
 
-.box11 img {width: 100%;}
+.box11 img {width: 90%;}
 .box11 { width: 100%;
     text-align: center;
 	margin-left: auto;
 	margin-right: auto}
 .serviceFlowText {
     font-size: 18px;
-    margin: 7px auto 40px;}
+    margin: 7px 10% 40px;}
 }
