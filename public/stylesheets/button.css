@@ -1,10 +1,10 @@
 /* ########### 全体 ########### */
-.button {
+.button, .button2, .button3 {
     cursor: pointer;
     position: absolute;
     left: 40%;
     right: 40%;
-    bottom: 13%;
+    bottom: 10%;
     font-size:1em;
     text-decoration:none;
     display:block;
@@ -16,14 +16,26 @@
     border-radius:25px;
 }
 
-.button:hover { background-color:#f8f8f8; }
+.button:hover, .button2:hover, .button3:hover { background-color:#f8f8f8; }
+
+.button2 {
+    bottom: 5%;
+}
+
+.button3 {
+    bottom: 15%;
+}
 
 /* ########### 1007px以下 ########### */
 @media (max-width: 1007px) {
-.button {
+.button, .button2, .button3 {
+    font-size:0.8em;
     left: 30%;
     right: 30%;
-    bottom: 6%;
+    bottom: 4%;
+}
+.button3 {
+    bottom: 15%;
 }
 .menu-trigger,
 .menu-trigger span {
