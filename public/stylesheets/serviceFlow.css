@@ -11,7 +11,7 @@ p.serviceFlow {
     font-size: 20px;
     text-align: center;
     line-height: 1.1;
-    margin: 7px auto;
+    margin: 7px auto 50px;
 }
 
 .serviceFlowText b.main {
@@ -45,5 +45,6 @@ p.serviceFlow {
 	margin-left: auto;
 	margin-right: auto}
 .serviceFlowText {
-    font-size: 15px;}
+    font-size: 15px;
+    margin: 7px auto 40px;}
 }

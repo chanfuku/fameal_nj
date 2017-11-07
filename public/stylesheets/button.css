@@ -30,12 +30,13 @@
 @media (max-width: 1007px) {
 .button, .button2, .button3 {
     font-size:0.8em;
+    padding:5px 0;
     left: 30%;
     right: 30%;
     bottom: 4%;
 }
 .button3 {
-    bottom: 15%;
+    bottom: 11%;
 }
 .menu-trigger,
 .menu-trigger span {
